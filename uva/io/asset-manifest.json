@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/uva/io/static/css/main.f0bc491c.chunk.css",
+    "main.js": "/uva/io/static/js/main.d02d45bd.chunk.js",
+    "main.js.map": "/uva/io/static/js/main.d02d45bd.chunk.js.map",
+    "runtime-main.js": "/uva/io/static/js/runtime-main.bf6f9d0e.js",
+    "runtime-main.js.map": "/uva/io/static/js/runtime-main.bf6f9d0e.js.map",
+    "static/css/2.11f871ab.chunk.css": "/uva/io/static/css/2.11f871ab.chunk.css",
+    "static/js/2.a43088cb.chunk.js": "/uva/io/static/js/2.a43088cb.chunk.js",
+    "static/js/2.a43088cb.chunk.js.map": "/uva/io/static/js/2.a43088cb.chunk.js.map",
+    "index.html": "/uva/io/index.html",
+    "precache-manifest.4f9960e0f06375a18c58d0573c4b0d26.js": "/uva/io/precache-manifest.4f9960e0f06375a18c58d0573c4b0d26.js",
+    "service-worker.js": "/uva/io/service-worker.js",
+    "static/css/2.11f871ab.chunk.css.map": "/uva/io/static/css/2.11f871ab.chunk.css.map",
+    "static/css/main.f0bc491c.chunk.css.map": "/uva/io/static/css/main.f0bc491c.chunk.css.map"
+  }
+}

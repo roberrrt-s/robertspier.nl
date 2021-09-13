@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" crossorigin=""/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.9/leaflet.draw.css" crossorigin=""/>
+		<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.0.5/dist/MarkerCluster.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-geocoder-mapzen/1.9.2/leaflet-geocoder-mapzen.css">
+		<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js" crossorigin=""></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.9/leaflet.draw.js"></script>
+		<script src="https://unpkg.com/leaflet.markercluster@1.0.5/dist/leaflet.markercluster.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-geocoder-mapzen/1.9.2/leaflet-geocoder-mapzen.js"></script>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+		<title>E-Mobilty Dashboard</title>
+	<link href="css/main-dev.css?618842a358babd1a9c61" rel="stylesheet"></head>
+	<body>
+
+		<header class="b-header">
+			<div class="b-header__logo">
+				<a href="/" target="_self">		
+					<img src="img/logo_idolaad_white.png" alt="IDO laad logo">
+				</a>
+			</div>
+		
+			<nav class="b-header__nav">
+				<ul>
+					<a href="index.html"><li class="js-index">Map</li></a>
+					<a href="data.html"><li class="js-data">Data</li></a>
+				</ul>
+			</nav>
+		
+			<div class="b-header__logout">
+				<a data-click="This button logs the current user out of the session" href="#" target="_self">
+					<div class="b-header__logout--wrapper">
+						<span>Logout</span>
+						<svg version="1.1" xml:space="preserve">
+						<g>
+							<path class="svg-logout" d="M12,2.1v2.5c1.2,1.1,2,2.7,2,4.5c0,3.3-2.7,6-6,6s-6-2.7-6-6c0-1.8,0.8-3.4,2-4.5V2.1C1.6,3.5,0,6,0,9
+								c0,4.4,3.6,8,8,8s8-3.6,8-8C16,6,14.4,3.5,12,2.1z"/>
+							<rect x="7" class="svg-logout" width="2" height="7"/>
+						</g>
+						</svg>
+					</div>
+				</a>
+			</div>
+		
+		</header>		
+		<section class="b-sidebar-data is-closed">
+			<nav class="b-sidebar-data__nav">
+				<ul class="b-sidebar-data__nav--dropdown-container">
+					<li class="b-sidebar-data__nav--content is-active">
+						<div class="js-sidebar-trigger">
+							<span>Filters</span>
+							<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="95.3 96.1 9.4 6.1">
+								<polyline class="svg-dropdown" points="104,96.8 100,100.8 96,96.8 "/>
+							</svg>
+						</div>
+		
+						<section class="c-forms">
+							<form>
+								<div class="c-forms__wrapper">
+									<label for="city" class="c-forms__label">City</label>
+									<input type="text" id="city" placeholder="City"> </input>
+								</div>					
+								<div class="c-forms__wrapper">
+									<label for="district" class="c-forms__label">District</label>
+									<input type="text" id="district" placeholder="District"> </input>
+								</div>
+								<div class="c-forms__wrapper">
+									<label for="subdestrict" class="c-forms__label">SubDistrict</label>
+									<input type="text" id="subdistrict" placeholder="SubDistrict"> </input>
+								</div>
+								<div class="c-forms__wrapper">
+									<label for="address" class="c-forms__label">Address</label>
+									<input type="text" id="address" placeholder="Address"> </input>
+								</div>
+								<div class="c-forms__wrapper">
+									<label for="postalcode" class="c-forms__label">Postal code</label>
+									<input type="text" id="postalcode" placeholder="Postal code"> </input>
+								</div>
+								<div class="c-forms__wrapper">
+									<label for="year" class="c-forms__label">Year</label>
+									<input type="text" id="year" placeholder="Year"> </input>
+								</div>
+								<div class="c-forms__wrapper">
+									<label for="month" class="c-forms__label">Month</label>
+									<input type="text" id="month" placeholder="Month"> </input>
+								</div>
+							</form>
+						</section>
+					</li>
+				</ul>
+					
+				<ul class="b-sidebar-data__nav--button-container">
+					<li class="b-sidebar-data__nav--button">
+						<a data-click="This button downloads the filtered data as a .csv file that can be inspected with Microsoft Excel" class="c-btn" href="#">Download selection</a>
+					</li>
+				</ul>
+			</nav>
+		</section>
+		<section class="b-table is-expanded">
+			<div class="b-table__header">
+				<div class="b-table__header--filter js-sidebar-trigger">
+					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="95.3 96.1 9.4 6.1">
+						<polyline class="svg-dropdown" points="104,96.8 100,100.8 96,96.8 "/>
+					</svg>
+				</div>
+			</div>
+			<div class="b-table__options">
+				<div class="b-table__options--wrapper">
+					<div class="c-forms">
+						<div class="c-forms__wrapper">
+							<span>Show</span>
+							<label for="amount" class="c-forms__label"></label>
+							<select id="amount" class="c-forms__select">
+								<option value="1"> 15 </option>
+								<option value="2"> 30 </option>
+								<option value="3"> 50 </option>
+							</select>
+							<span>entries</span>
+						</div>
+					</div>
+				</div>
+				<div class="b-table__options--wrapper">
+					<div class="c-forms__wrapper">
+						<label for="search"></label>
+						<input id="search" placeholder="Search" type='text'></input>
+					</div>
+				</div>	
+			</div>
+			<div class="b-table__content">
+				<table>
+					<tr>
+						<th>ID</th>
+						<th>Address</th>
+						<th>Chargepoint</th>
+						<th>Subdistrict</th>
+						<th>City</th>
+						<th>Postal code</th>
+						<th>Year</th>
+						<th>Month</th>
+						<th>Sum connection time</th>
+						<th>Sum chargin time</th>		  
+					</tr>
+					<tr>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Mexico</td>
+					</tr>
+					<tr>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Mexico</td>
+					</tr>
+					<tr>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Mexico</td>
+					</tr>
+					<tr>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Mexico</td>
+					</tr>
+					<tr>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Mexico</td>
+					</tr>
+					<tr>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Mexico</td>
+					</tr>
+					<tr>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Mexico</td>
+					</tr>
+					<tr>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Mexico</td>
+					</tr>
+					<tr>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Mexico</td>
+					</tr>
+					<tr>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Mexico</td>
+					</tr>
+					<tr>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Mexico</td>
+					</tr>
+					<tr>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Mexico</td>
+					</tr>
+					<tr>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Mexico</td>
+					</tr>
+					<tr>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Mexico</td>
+					</tr>
+					<tr>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Mexico</td>
+					</tr>
+					<tr>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Mexico</td>
+					</tr>
+					<tr>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Mexico</td>
+					</tr>
+					<tr>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Centro comercial Moctezuma</td>
+						<td>Francisco Chang</td>
+						<td>Mexico</td>
+						<td>Mexico</td>
+					</tr>
+				</table>
+			</div>
+			<div class="b-table__footer">
+				<p>Showing 15 of 54,382 entries</p>
+				<div class="c-forms">
+					<div class="c-forms__wrapper">
+						<a href="#" class="c-forms__wrapper-nav-closing">< Previous</a>
+						<a href="#">1</a>	
+						<a href="#">2</a>	
+						<a href="#">3</a>
+						<a href="#">...</a>
+						<a href="#">593</a>
+						<a href="#">594</a>
+						<a href="#">595</a>
+						<a href="#" class="c-forms__wrapper-nav-closing">Next ></a>
+					</div>
+				</div>
+			</div>
+		</section>
+	<script type="text/javascript" src="js/data-dev.js?618842a358babd1a9c61"></script></body>
+</html>

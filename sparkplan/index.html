@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" crossorigin=""/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.9/leaflet.draw.css" crossorigin=""/>
+		<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.0.5/dist/MarkerCluster.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-geocoder-mapzen/1.9.2/leaflet-geocoder-mapzen.css">
+		<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js" crossorigin=""></script>
+		<script src="https://npmcdn.com/@turf/turf/turf.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.9/leaflet.draw.js"></script>
+		<script src="https://unpkg.com/leaflet.markercluster@1.0.5/dist/leaflet.markercluster.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-geocoder-mapzen/1.9.2/leaflet-geocoder-mapzen.js"></script>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+		<title>E-Mobilty Dashboard</title>
+	<link href="css/main-dev.css?7386a340069b84e23505" rel="stylesheet"></head>
+	<body>
+
+		<header class="b-header">
+			<div class="b-header__logo">
+				<a href="/" target="_self">		
+					<img src="img/logo_idolaad_white.png" alt="IDO laad logo">
+				</a>
+			</div>
+		
+			<nav class="b-header__nav">
+				<ul>
+					<a href="index.html"><li class="js-index is-active">Map</li></a>
+					<a href="data.html"><li class="js-data">Data</li></a>
+				</ul>
+			</nav>
+		
+			<div class="b-header__logout">
+				<a data-click="This button logs the current user out of the session" href="#" target="_self">
+					<div class="b-header__logout--wrapper">
+						<span>Logout</span>
+						<svg version="1.1" xml:space="preserve">
+						<g>
+							<path class="svg-logout" d="M12,2.1v2.5c1.2,1.1,2,2.7,2,4.5c0,3.3-2.7,6-6,6s-6-2.7-6-6c0-1.8,0.8-3.4,2-4.5V2.1C1.6,3.5,0,6,0,9
+								c0,4.4,3.6,8,8,8s8-3.6,8-8C16,6,14.4,3.5,12,2.1z"/>
+							<rect x="7" class="svg-logout" width="2" height="7"/>
+						</g>
+						</svg>
+					</div>
+				</a>
+			</div>
+		
+		</header>		
+		<section class="b-sidebar-map">
+			<nav class="b-sidebar-map__nav">
+				<ul class="b-sidebar-map__nav--dropdown-container">
+					<a href="#" class="js-dropdown-menu"><li class="b-sidebar-map__nav--dropdown">Selection tools
+						<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="95.3 96.1 9.4 6.1">
+							<polyline class="svg-dropdown" points="104,96.8 100,100.8 96,96.8 "/>
+						</svg>
+					</li></a>
+					<li class="b-sidebar-map__nav--content">
+						<section class="c-forms">
+							<form>
+								<div class="c-forms__wrapper">
+									<label for="niveau" class="c-forms__label">Level</label>
+									<select id="niveau" class="c-forms__select">
+										<option value="1">Select on address</option>
+										<option value="2">Select on neighbourhood</option>
+										<option value="3">Select on district</option>
+										<option value="3">Select on city</option>
+									</select>
+								</div>					
+								<div class="c-forms__wrapper">
+									<label for="provider" class="c-forms__label">Charging pole provider</label>
+									<select id="provider" class="c-forms__select">
+										<option value="1">All</option>
+										<option value="2">ESSENT</option>
+										<option value="3">NUON</option>
+										<option value="4">BALLASTNEDAM</option>
+										<option value="5">EVNET</option>
+										<option value="6">ALLEGO</option>
+									</select>
+								</div>
+								<div class="c-forms__wrapper">
+									<label for="usetype" class="c-forms__label">User type</label>
+									<select id="usetype" class="c-forms__select">
+										<option value="1">All</option>
+										<option value="2">Car2go</option>
+										<option value="3">Regular</option>
+										<option value="4">Taxi</option>
+										<option value="5">Connexxion</option>
+									</select>
+								</div>
+							</form>
+						</section>
+					</li>
+					<a href="#" class="js-dropdown-menu"><li class="b-sidebar-map__nav--dropdown">Filter based on KPI
+						<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="95.3 96.1 9.4 6.1">
+							<polyline class="svg-dropdown" points="104,96.8 100,100.8 96,96.8 "/>
+						</svg>
+					</li></a>
+					<li class="b-sidebar-map__nav--content">
+						<section class="c-forms">
+							<form>
+								<div class="c-forms__wrapper">
+									<label for="kpi-choice" class="c-forms__label">Choose KPI</label>
+									<select id="kpi-choice" class="c-forms__select">
+										<option value="1">Number of sessions</option>
+										<option value="2">Total kWh</option>
+										<option value="3">Total connection time</option>
+									</select>
+								</div>					
+								<div class="c-forms__wrapper">
+									<label for="year" class="c-forms__label">Year</label>
+									<select id="year" class="c-forms__select">
+										<option value="1">2017</option>
+										<option value="2">2016</option>
+										<option value="3">2015</option>
+									</select>
+								</div>
+								<div class="c-forms__wrapper">
+									<label for="month" class="c-forms__label">Month</label>
+									<select id="month" class="c-forms__select">
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="5">5</option>
+										<option value="6">6</option>
+										<option value="7">7</option>
+										<option value="8">8</option>
+										<option value="9">9</option>
+										<option value="10">10</option>
+										<option value="11">11</option>
+										<option value="12">12</option>
+									</select>
+								</div>
+								<div class="c-forms__wrapper">
+									<label for="usetype" class="c-forms__label">Range</label>
+									<input id="rangeslider" class="js-dropdown-slider rangeslider" type="text"></input>
+								</div>
+							</form>
+						</section>
+					</li>
+				</ul>
+				<ul class="b-sidebar-map__nav--button-container">
+					<li class="b-sidebar-map__nav--button">
+						<a data-click="This button simulates a new page being opened in which all the currently selected graphs are being displayed in a PDF-like manner" class="c-btn" href="#">Generate report</a>
+					</li>
+					<li class="b-sidebar-map__nav--button">
+						<a class="c-btn js-reset-selection" href="#">Clear selection</a>
+					</li>
+				</ul>
+			</nav>
+		</section>
+		<section class="b-map">
+			<div id="map"></div>
+		</section>
+		<section class="b-modal">
+			<section class="b-modal__languette js-open-languette">
+				<div class="b-modal__languette--message">Show graph selection (<span class="js-languette-active-amount">0</span>)</div>
+			</section>
+		
+			<section class="b-modal__container">
+				<header class="b-modal__container--header">
+					<p>Sum of total connection time</p>
+					<a href="#" class="js-close-languette"><svg x="0px" y="0px" viewBox="0 0 9.4 9.4" style="enable-background:new 0 0 9.4 9.4;" xml:space="preserve">
+					<g>
+						<defs>
+							<rect id="SVGID_1_" y="0" width="9.4" height="9.4"/>
+						</defs>
+						<clipPath id="SVGID_2_">
+							<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+						</clipPath>
+						<polyline class="svg-style" points="8.7,0.7 4.7,4.7 0.7,0.7"/>
+						<polyline class="svg-style" points="0.7,8.7 4.7,4.7 8.7,8.7"/>
+					</g>
+					</svg></a>
+				</header>
+				<div class="b-modal__container--content">
+					<div class="b-modal__container--content-time">
+						<div class="c-forms">
+							<div class="c-forms__wrapper">
+								<label for="tomonth" class="c-forms__label">Starting date</label>
+								<select id="tomonth" class="c-forms__select">
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
+								</select>
+		
+								<label for="toyear" class="c-forms__label"></label>
+								<select id="toyear" class="c-forms__select">
+									<option value="1"> 2015 </option>
+									<option value="2"> 2016 </option>
+									<option value="3"> 2017 </option>
+								</select>
+		
+							</div>
+						</div>
+						<div class="c-forms">
+							<div class="c-forms__wrapper">
+								<label for="frommonth" class="c-forms__label">Ending date</label>
+								<select id="frommonth" class="c-forms__select">
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
+								</select>
+		
+								<label for="fromyear" class="c-forms__label"></label>
+								<select id="fromyear" class="c-forms__select">
+									<option value="1"> 2015 </option>
+									<option value="2"> 2016 </option>
+									<option value="3"> 2017 </option>
+								</select>
+		
+							</div>
+						</div>
+					</div>
+					<div class="b-modal__container--content-graph"></div>
+				</div>
+				<footer class="b-modal__container--footer">	
+					<a data-click="This button opens a new page that includes this single graph as an image" class="c-btn" href="#">Export current graph</a>
+					<a data-click="This button simulates a new page being opened in which all the currently selected graphs are being displayed in a PDF-like manner" class="c-btn" href="#">Export all graphs</a>
+				</footer>
+			</section>
+		</section>		<section class="b-modal">
+			<section class="b-modal__languette js-open-languette">
+				<div class="b-modal__languette--message">Show graph selection (<span class="js-languette-active-amount">0</span>)</div>
+			</section>
+		
+			<section class="b-modal__container">
+				<header class="b-modal__container--header">
+					<p>Sum of total connection time</p>
+					<a href="#" class="js-close-languette"><svg x="0px" y="0px" viewBox="0 0 9.4 9.4" style="enable-background:new 0 0 9.4 9.4;" xml:space="preserve">
+					<g>
+						<defs>
+							<rect id="SVGID_1_" y="0" width="9.4" height="9.4"/>
+						</defs>
+						<clipPath id="SVGID_2_">
+							<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+						</clipPath>
+						<polyline class="svg-style" points="8.7,0.7 4.7,4.7 0.7,0.7"/>
+						<polyline class="svg-style" points="0.7,8.7 4.7,4.7 8.7,8.7"/>
+					</g>
+					</svg></a>
+				</header>
+				<div class="b-modal__container--content">
+					<div class="b-modal__container--content-time">
+						<div class="c-forms">
+							<div class="c-forms__wrapper">
+								<label for="tomonth" class="c-forms__label">Starting date</label>
+								<select id="tomonth" class="c-forms__select">
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
+								</select>
+		
+								<label for="toyear" class="c-forms__label"></label>
+								<select id="toyear" class="c-forms__select">
+									<option value="1"> 2015 </option>
+									<option value="2"> 2016 </option>
+									<option value="3"> 2017 </option>
+								</select>
+		
+							</div>
+						</div>
+						<div class="c-forms">
+							<div class="c-forms__wrapper">
+								<label for="frommonth" class="c-forms__label">Ending date</label>
+								<select id="frommonth" class="c-forms__select">
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
+								</select>
+		
+								<label for="fromyear" class="c-forms__label"></label>
+								<select id="fromyear" class="c-forms__select">
+									<option value="1"> 2015 </option>
+									<option value="2"> 2016 </option>
+									<option value="3"> 2017 </option>
+								</select>
+		
+							</div>
+						</div>
+					</div>
+					<div class="b-modal__container--content-graph"></div>
+				</div>
+				<footer class="b-modal__container--footer">	
+					<a data-click="This button opens a new page that includes this single graph as an image" class="c-btn" href="#">Export current graph</a>
+					<a data-click="This button simulates a new page being opened in which all the currently selected graphs are being displayed in a PDF-like manner" class="c-btn" href="#">Export all graphs</a>
+				</footer>
+			</section>
+		</section>		<section class="b-modal">
+			<section class="b-modal__languette js-open-languette">
+				<div class="b-modal__languette--message">Show graph selection (<span class="js-languette-active-amount">0</span>)</div>
+			</section>
+		
+			<section class="b-modal__container">
+				<header class="b-modal__container--header">
+					<p>Sum of total connection time</p>
+					<a href="#" class="js-close-languette"><svg x="0px" y="0px" viewBox="0 0 9.4 9.4" style="enable-background:new 0 0 9.4 9.4;" xml:space="preserve">
+					<g>
+						<defs>
+							<rect id="SVGID_1_" y="0" width="9.4" height="9.4"/>
+						</defs>
+						<clipPath id="SVGID_2_">
+							<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+						</clipPath>
+						<polyline class="svg-style" points="8.7,0.7 4.7,4.7 0.7,0.7"/>
+						<polyline class="svg-style" points="0.7,8.7 4.7,4.7 8.7,8.7"/>
+					</g>
+					</svg></a>
+				</header>
+				<div class="b-modal__container--content">
+					<div class="b-modal__container--content-time">
+						<div class="c-forms">
+							<div class="c-forms__wrapper">
+								<label for="tomonth" class="c-forms__label">Starting date</label>
+								<select id="tomonth" class="c-forms__select">
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
+								</select>
+		
+								<label for="toyear" class="c-forms__label"></label>
+								<select id="toyear" class="c-forms__select">
+									<option value="1"> 2015 </option>
+									<option value="2"> 2016 </option>
+									<option value="3"> 2017 </option>
+								</select>
+		
+							</div>
+						</div>
+						<div class="c-forms">
+							<div class="c-forms__wrapper">
+								<label for="frommonth" class="c-forms__label">Ending date</label>
+								<select id="frommonth" class="c-forms__select">
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
+								</select>
+		
+								<label for="fromyear" class="c-forms__label"></label>
+								<select id="fromyear" class="c-forms__select">
+									<option value="1"> 2015 </option>
+									<option value="2"> 2016 </option>
+									<option value="3"> 2017 </option>
+								</select>
+		
+							</div>
+						</div>
+					</div>
+					<div class="b-modal__container--content-graph"></div>
+				</div>
+				<footer class="b-modal__container--footer">	
+					<a data-click="This button opens a new page that includes this single graph as an image" class="c-btn" href="#">Export current graph</a>
+					<a data-click="This button simulates a new page being opened in which all the currently selected graphs are being displayed in a PDF-like manner" class="c-btn" href="#">Export all graphs</a>
+				</footer>
+			</section>
+		</section>		<section class="b-modal">
+			<section class="b-modal__languette js-open-languette">
+				<div class="b-modal__languette--message">Show graph selection (<span class="js-languette-active-amount">0</span>)</div>
+			</section>
+		
+			<section class="b-modal__container">
+				<header class="b-modal__container--header">
+					<p>Sum of total connection time</p>
+					<a href="#" class="js-close-languette"><svg x="0px" y="0px" viewBox="0 0 9.4 9.4" style="enable-background:new 0 0 9.4 9.4;" xml:space="preserve">
+					<g>
+						<defs>
+							<rect id="SVGID_1_" y="0" width="9.4" height="9.4"/>
+						</defs>
+						<clipPath id="SVGID_2_">
+							<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+						</clipPath>
+						<polyline class="svg-style" points="8.7,0.7 4.7,4.7 0.7,0.7"/>
+						<polyline class="svg-style" points="0.7,8.7 4.7,4.7 8.7,8.7"/>
+					</g>
+					</svg></a>
+				</header>
+				<div class="b-modal__container--content">
+					<div class="b-modal__container--content-time">
+						<div class="c-forms">
+							<div class="c-forms__wrapper">
+								<label for="tomonth" class="c-forms__label">Starting date</label>
+								<select id="tomonth" class="c-forms__select">
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
+								</select>
+		
+								<label for="toyear" class="c-forms__label"></label>
+								<select id="toyear" class="c-forms__select">
+									<option value="1"> 2015 </option>
+									<option value="2"> 2016 </option>
+									<option value="3"> 2017 </option>
+								</select>
+		
+							</div>
+						</div>
+						<div class="c-forms">
+							<div class="c-forms__wrapper">
+								<label for="frommonth" class="c-forms__label">Ending date</label>
+								<select id="frommonth" class="c-forms__select">
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
+								</select>
+		
+								<label for="fromyear" class="c-forms__label"></label>
+								<select id="fromyear" class="c-forms__select">
+									<option value="1"> 2015 </option>
+									<option value="2"> 2016 </option>
+									<option value="3"> 2017 </option>
+								</select>
+		
+							</div>
+						</div>
+					</div>
+					<div class="b-modal__container--content-graph"></div>
+				</div>
+				<footer class="b-modal__container--footer">	
+					<a data-click="This button opens a new page that includes this single graph as an image" class="c-btn" href="#">Export current graph</a>
+					<a data-click="This button simulates a new page being opened in which all the currently selected graphs are being displayed in a PDF-like manner" class="c-btn" href="#">Export all graphs</a>
+				</footer>
+			</section>
+		</section>		<section class="b-modal">
+			<section class="b-modal__languette js-open-languette">
+				<div class="b-modal__languette--message">Show graph selection (<span class="js-languette-active-amount">0</span>)</div>
+			</section>
+		
+			<section class="b-modal__container">
+				<header class="b-modal__container--header">
+					<p>Sum of total connection time</p>
+					<a href="#" class="js-close-languette"><svg x="0px" y="0px" viewBox="0 0 9.4 9.4" style="enable-background:new 0 0 9.4 9.4;" xml:space="preserve">
+					<g>
+						<defs>
+							<rect id="SVGID_1_" y="0" width="9.4" height="9.4"/>
+						</defs>
+						<clipPath id="SVGID_2_">
+							<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+						</clipPath>
+						<polyline class="svg-style" points="8.7,0.7 4.7,4.7 0.7,0.7"/>
+						<polyline class="svg-style" points="0.7,8.7 4.7,4.7 8.7,8.7"/>
+					</g>
+					</svg></a>
+				</header>
+				<div class="b-modal__container--content">
+					<div class="b-modal__container--content-time">
+						<div class="c-forms">
+							<div class="c-forms__wrapper">
+								<label for="tomonth" class="c-forms__label">Starting date</label>
+								<select id="tomonth" class="c-forms__select">
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
+								</select>
+		
+								<label for="toyear" class="c-forms__label"></label>
+								<select id="toyear" class="c-forms__select">
+									<option value="1"> 2015 </option>
+									<option value="2"> 2016 </option>
+									<option value="3"> 2017 </option>
+								</select>
+		
+							</div>
+						</div>
+						<div class="c-forms">
+							<div class="c-forms__wrapper">
+								<label for="frommonth" class="c-forms__label">Ending date</label>
+								<select id="frommonth" class="c-forms__select">
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
+								</select>
+		
+								<label for="fromyear" class="c-forms__label"></label>
+								<select id="fromyear" class="c-forms__select">
+									<option value="1"> 2015 </option>
+									<option value="2"> 2016 </option>
+									<option value="3"> 2017 </option>
+								</select>
+		
+							</div>
+						</div>
+					</div>
+					<div class="b-modal__container--content-graph"></div>
+				</div>
+				<footer class="b-modal__container--footer">	
+					<a data-click="This button opens a new page that includes this single graph as an image" class="c-btn" href="#">Export current graph</a>
+					<a data-click="This button simulates a new page being opened in which all the currently selected graphs are being displayed in a PDF-like manner" class="c-btn" href="#">Export all graphs</a>
+				</footer>
+			</section>
+		</section>		<section class="b-modal">
+			<section class="b-modal__languette js-open-languette">
+				<div class="b-modal__languette--message">Show graph selection (<span class="js-languette-active-amount">0</span>)</div>
+			</section>
+		
+			<section class="b-modal__container">
+				<header class="b-modal__container--header">
+					<p>Sum of total connection time</p>
+					<a href="#" class="js-close-languette"><svg x="0px" y="0px" viewBox="0 0 9.4 9.4" style="enable-background:new 0 0 9.4 9.4;" xml:space="preserve">
+					<g>
+						<defs>
+							<rect id="SVGID_1_" y="0" width="9.4" height="9.4"/>
+						</defs>
+						<clipPath id="SVGID_2_">
+							<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+						</clipPath>
+						<polyline class="svg-style" points="8.7,0.7 4.7,4.7 0.7,0.7"/>
+						<polyline class="svg-style" points="0.7,8.7 4.7,4.7 8.7,8.7"/>
+					</g>
+					</svg></a>
+				</header>
+				<div class="b-modal__container--content">
+					<div class="b-modal__container--content-time">
+						<div class="c-forms">
+							<div class="c-forms__wrapper">
+								<label for="tomonth" class="c-forms__label">Starting date</label>
+								<select id="tomonth" class="c-forms__select">
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
+								</select>
+		
+								<label for="toyear" class="c-forms__label"></label>
+								<select id="toyear" class="c-forms__select">
+									<option value="1"> 2015 </option>
+									<option value="2"> 2016 </option>
+									<option value="3"> 2017 </option>
+								</select>
+		
+							</div>
+						</div>
+						<div class="c-forms">
+							<div class="c-forms__wrapper">
+								<label for="frommonth" class="c-forms__label">Ending date</label>
+								<select id="frommonth" class="c-forms__select">
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
+								</select>
+		
+								<label for="fromyear" class="c-forms__label"></label>
+								<select id="fromyear" class="c-forms__select">
+									<option value="1"> 2015 </option>
+									<option value="2"> 2016 </option>
+									<option value="3"> 2017 </option>
+								</select>
+		
+							</div>
+						</div>
+					</div>
+					<div class="b-modal__container--content-graph"></div>
+				</div>
+				<footer class="b-modal__container--footer">	
+					<a data-click="This button opens a new page that includes this single graph as an image" class="c-btn" href="#">Export current graph</a>
+					<a data-click="This button simulates a new page being opened in which all the currently selected graphs are being displayed in a PDF-like manner" class="c-btn" href="#">Export all graphs</a>
+				</footer>
+			</section>
+		</section>
+	<script type="text/javascript" src="js/main-dev.js?7386a340069b84e23505"></script></body>
+</html>

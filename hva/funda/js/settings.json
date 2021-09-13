@@ -1,0 +1,34 @@
+{
+    "googleMapsKey": "AIzaSyC_e4Rbzte5A2Qle1YtwMZjCdcycca-IBI",
+    "tourType": "SANDBOX",
+    "mapOptions": {
+        "center": [52.37266359061312, 4.897499084472656],
+        "zoom": 12,
+        "disableDefaultUI": true,
+        "draggable": true,
+        "scrollwheel": true,
+        "mapTypeControl": true,
+        "navigationControl": true,
+        "mapTypeId": "ROADMAP"
+    },
+    "posMarker": {
+        "path": "CIRCLE",
+        "fillColor": "red",
+        "fillOpacity": 0,
+        "strokeColor": "blue",
+        "strokeOpacity": 0,
+        "strokeWeight": 1,
+        "scale": 2
+    },
+    "poiMarker": {
+        "path": "CIRCLE",
+        "fillColor": "blue",
+        "fillOpacity": 0,
+        "strokeColor": "blue",
+        "strokeOpacity": 0,
+        "strokeWeight": 1,
+        "scale": 2
+    },
+    "poiList":[
+    ]
+}

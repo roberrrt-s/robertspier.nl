@@ -1,0 +1,15 @@
+{
+  "entrypoints": {
+    "main": {
+      "css": [
+        "/redcat/styles/50d20535692d5192.css"
+      ],
+      "js": [
+        "/redcat/scripts/50d20535692d5192.js"
+      ]
+    }
+  },
+  "images/redcat.jpg": "/redcat/images/0dd31a936232aecb.jpg",
+  "main.css": "/redcat/styles/50d20535692d5192.css",
+  "main.js": "/redcat/scripts/50d20535692d5192.js"
+}

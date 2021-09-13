@@ -1,0 +1,29 @@
+@charset "utf-8";
+body {
+	font-family: Tahoma;
+	font-size: 14px;
+	color: #FFF;
+	background-image: url(img/bg.png);
+	background-repeat: repeat; 
+}
+.sesamopen {
+	background-color: #000;
+	border-radius: 10px;
+	height: 100px;
+	width: 100px;
+	color: #000;
+	overflow: hidden;
+	padding: 10px;
+	margin: 10px;
+	transition: ease 0.7s;
+	-webkit-transition: ease 0.7s;
+}
+.sesamopen:hover {
+	color: #FFF;
+	width: 800px;
+}
+.sesamopen h1 {
+	color: #F00;
+	text-transform: uppercase;
+	text-align: center;
+}

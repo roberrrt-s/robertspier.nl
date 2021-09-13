@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This is the ultimate maplestory calculator regarding damage, avoidabillity, accuracy etc.">
+    <meta name="author" content="Robert Spier">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <title>Accuracy Calculator</title>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,300" rel="stylesheet" type="text/css">
+    <link href="https://necolas.github.io/normalize.css/3.0.2/normalize.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/style.css"><!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="js/min/accuracy-normal-min.js"></script>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css" rel="stylesheet">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
+    <script src="js/min/monsters-min.js"></script>
+  </head>
+  <body class="accuracy">
+    <div class="wrapper">
+      <table>
+        <h1>Accuracy Calculator (normal)</h1><br>
+        <h2>Enter your variables to calculate the chance of succes for your hits</h2>
+        <tr>
+          <td>Your Level</td>
+          <td>Your Accuracy</td>
+          <td>Monster</td>
+        </tr>
+        <tr>
+          <td>
+            <input type="number" name="level" value="0" maxlength="3" size="10" id="level">
+          </td>
+          <td>
+            <input type="number" name="accuracy" value="0" maxlength="3" size="10" id="accuracy">
+          </td>
+          <td>
+            <select id="monster" class="js-monster-data-array"> </select>
+          </td>
+        </tr>
+      </table>
+      <p></p>
+      <div class="submit">
+        <button id="calculateit">Calculate your hitchance</button>
+        <button id="resetit">Reset values</button>
+      </div>
+      <table>
+        <tr>
+          <td>
+            <p id="result">---</p>
+          </td>
+        </tr>
+      </table>
+      <table>
+        <h2>Result: </h2>
+        <tr> 
+          <td>Required accuracy for a 100% hit</td>
+          <td>Required accuracy to &#62;1% hit	</td>
+          <td>Actual chance to hit the monster</td>
+        </tr>
+        <tr>
+          <td>
+            <input type="number" name="maxout" value="0" maxlength="3" size="10" id="maxout">
+          </td>
+          <td>
+            <input type="number" name="minout" value="0" maxlength="3" size="10" id="minout">
+          </td>
+          <td>
+            <input type="number" name="hitrateout" value="0" maxlength="3" size="10" id="hitrateout">
+            <div class="floatleft">%				</div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+
+    <title>Born2Cook Second Screen</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/modern-business.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><img src="img/logo.png"></img></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="index.html" class="btn btn-block btn-social btn-twitter">
+                            <i class="fa fa-twitter"></i> Sign in with Twitter
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html" class="btn btn-block btn-social btn-facebook">
+                            <i class="fa fa-facebook"></i> Sign in with Facebook
+                        </a>                    
+                    </li>
+                    <li>
+                        <a href="#" id="toiletswitch">Toiletmodus</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- NORMAAL -->
+        <div class="row" id="normaal">
+            <!-- Filling up -->
+            <div class="col-md-12">
+                <h4>Normale modus</h4>
+            </div>
+            <div class="col-md-12 okedoei" id="msg6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <i id="closemsg6" class="fa fa-2x fa-close right"></i>
+                        <h4>Zelf maken?</h4>
+                    </div>
+                    <div class="panel-body">
+                        <p>Zelf proberen? Het recept staat nu op onze website,</p>
+                        <p><a href="http://www.ah.nl/kookschrift/verzameld-recept?id=391828">Bezoek de receptpagina, klik hier</a></p>
+                        <p>Dit recept delen? gebruik de knoppen hieronder</p>
+                        <div class="share-buttons">
+                            <a href="#"><img src="http://www.simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" /></a>
+                            <a href="http://twitter.com/share?url=http://www.simplesharebuttons.com&text=Simple Share Buttons&hashtags=simplesharebuttons" target="_blank"><img src="http://www.simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" /></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 okedoei" id="msg5">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <i id="closemsg5" class="fa fa-2x fa-close right"></i>
+                        <h4>Kaneel</h4>
+                    </div>
+                    <div class="panel-body">
+                        <img src="img/kaneel.png" alt="Kaneel">
+                        <p><strong>Kaneel</strong>t is een in de keuken gebruikte specerij. Het bestaat uit de binnenbast van de scheuten van de kaneelboom, (Cinnamomum verum, synoniem: Cinnamomum zeylanicum). Er bestaan vele varianten, maar de belangrijkste zijn de Ceylonkaneel en de cassia of kassie (Cinnamomum aromaticum, synoniem: Cinnamomum cassia). Cassia is wat branderiger en zoeter dan Ceylonkaneel. Kaneel wordt in stokjes verkocht. Het kaneelpoeder dat in de keuken wordt gebruikt bestaat meestal uit gemalen cassia waar soms wat gemalen Ceylonkaneel aan toegevoegd is.</p>
+                        <p><a href="http://nl.wikipedia.org/wiki/Kaneel">Lees verder...</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 okedoei" id="msg4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <i id="closemsg4" class="fa fa-2x fa-close right"></i>
+                        <h4>Spruitjes</h4>
+                    </div>
+                    <div class="panel-body">
+                        <img src="img/spruitjes.png" alt="Spruitjes">
+                        <p><strong>Spruitkool</strong> of <strong>spruitjes</strong> (Brassica oleracea convar. oleracea var. gemmifera) zijn een kleine koolsoort. Het is een belangrijke wintergroente.</p>
+
+                        <p>Oorspronkelijk komen spruitjes uit het Middellandse Zeegebied, waar ze al duizenden jaren worden geteelt. Na de Oudheid is de teelt ervan ook in Noord-Europa begonnen, maar wanneer is onduidelijk. Volgens sommigen was dit reeds in de 5e eeuw, volgens anderen zijn spruitjes pas in de 13e eeuw of nog later in de omgeving van Brussel beland. Via Franse kolonisten zijn ze uiteindelijk ook in Noord-Amerika beland, het eerst in Louisiana.</p>
+                        <p><a href="http://nl.wikipedia.org/wiki/Spruitjes">Lees verder...</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 okedoei" id="msg3">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <i id="closemsg3" class="fa fa-2x fa-close right"></i>
+                        <h4><i class="fa fa-twitter"></i> #ThuisTip</h4>
+                    </div>
+                    <div class="panel-body">
+                        <p class="okedoei" id="dank1">Bedankt voor je stem! De uitslag verschijnt straks op TV!</p>
+                        <form id="form1">
+                            <p>Waar maak jij je gehaktballen mee? Maak een keuze:</p>
+                            <p><input type="radio"> Rundergehakt</input><br>
+                            <input type="radio"> Varkensgehakt</input><br>
+                            <input type="radio"> Half-om-half gehakt</input></p>
+                            <p><input type="button" value="Stem" id="stem1"></input></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 okedoei" id="msg2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <i id="closemsg2" class="fa fa-2x fa-close right"></i>       
+                        <h4>Parmezaanse kaas</h4>
+                    </div>
+                    <div class="panel-body">
+                        <img src="img/parmazaan.jpg" alt="Parmazaanse kaas">
+                        <p><strong>Parmezaanse kaas</strong> (Italiaans: Parmigiano Reggiano, soms parmezaan genoemd) is een soort kaas die oorspronkelijk uit Italië komt, uit de omgeving van Parma.</p>
+
+                        <p>De kaas die in de regio geproduceerd wordt had al in 1200-1300 de vorm die hij nu nog steeds heeft. In de Decamerone is al een verwijzing naar de kaas te vinden. De zuivelverwerking in die streek moet al een veel langere geschiedenis hebben, wil er dan al zo’n kaas ontstaan zijn. De kaas wordt nog steeds gemaakt volgens het oude recept, met alleen de melk uit de streek, stremsel, vuur en de kunst van het kaasmaken. Andere toevoegingen aan de kaas zijn absoluut niet toegestaan.</p>
+                        <p><a href="http://nl.wikipedia.org/wiki/Parmezaanse_kaas">Lees verder...</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 okedoei" id="msg1">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <i id="closemsg1" class="fa fa-2x fa-close right"></i>
+                        <h4>De aflevering is begonnen</h4>
+                    </div>
+                    <div class="panel-body">
+                        <p>Ramon gaat vandaag spruitenstamppot met kaasgehaktbal maken. Dit typisch Hollandse gerecht duurt ongeveer 40 minuten om klaar te maken, en is qua moeilijkheidsniveau ongeveer gemiddeld.</p>
+                        <div class="share-buttons">
+                            <a href="http://www.facebook.com/sharer.php?u=http://www.simplesharebuttons.com" target="_blank"><img src="http://www.simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" /></a>
+                            <a href="http://twitter.com/share?url=http://www.simplesharebuttons.com&text=Simple Share Buttons&hashtags=simplesharebuttons" target="_blank"><img src="http://www.simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" /></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Toilet -->
+        <div class="row okedoei" id="toilet">
+            <!-- Filling up -->
+            <div class="col-md-12">
+                <h4>Toiletmodus</h4>
+            </div>
+            <div class="col-md-12 okedoei" id="msg22t">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4>De aflevering is afgelopen, Ramon heeft spruitenstampot met gehaktballen gemaakt</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 okedoei" id="msg21t">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4>Ramon serveert de maaltijd</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 okedoei" id="msg20t">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4>De gehaktballen zijn klaar</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 okedoei" id="msg19t">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4>Als tip geeft Ramon mee dat je er nog kaneel op kunt doen</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 okedoei" id="msg18t">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4>Voor de smaak gooit hij er nog een snufje zout bij</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 okedoei" id="msg17t">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4>Als de puree klaar is gooit hij de spruitjes erdoorheen.</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 okedoei" id="msg16t">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4>Hij laat de melk heel even meekoken, en pureert de aardappelen daarna. </h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 okedoei" id="msg15t">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4>Ramon heeft de aardappelen al gekookt, en voegt daar nu alleen nog een kopje melk aan toe</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 okedoei" id="msg14t">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4>Na 5 - 6 minuten zijn de spruitjes goed.</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 okedoei" id="msg13t">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4>Ramon bakt de spruitjes op</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 okedoei" id="msg12t">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4>Ondertussen maakt Ramon de spruitjes schoon. Hij verdeelt ze in 4 stukjes</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 okedoei" id="msg11t">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4>Hij blust daarna de gehaktballen af met wat runderboullion</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 okedoei" id="msg10t">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4>Ramon snijdt nu de tomaat, om die zometeen bij de gehaktballen te doen.</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 okedoei" id="msg9t">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4>Vervolgens braadt hij deze ballen aan in een combinatie van olie en boter.</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 okedoei" id="msg8t">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4>Na het mixen maakt hij mooie, ronde gehaktballen van het mengsel</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 okedoei" id="msg7t">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4>Ramon bindt het gehakt samen met behulp van panneermeel</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 okedoei" id="msg6t">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4>Tenslotte snijdt hij wat peper fijn, en gooit hij deze er nog bij</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 okedoei" id="msg5t">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4>Ook voegt Ramon nog wat extra knoflook toe voor een lekkere nasmaak</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 okedoei" id="msg4t">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4>Om iets meer pit en kracht toe te voegen aan het gerecht voegt Ramon ook nog parmazaanse kaas toe</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 okedoei" id="msg3t">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4>Ramon snijdt de kaas eerst in blokjes</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 okedoei" id="msg2t">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4>Voor de gehaktballen heeft Ramon de volgende ingediënten nodig:</h4>
+                        <ul>
+                            <li>Spruiten</li>
+                            <li>Half-om-half gehakt</li>
+                            <li>Kaas</li>
+                        </ul>    
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 okedoei" id="msg1t">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4>Ramon gaat vandaag spruitenstamppot met kaasgehaktbal maken</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/klikdoei.js"></script>
+
+</body>
+
+</html>

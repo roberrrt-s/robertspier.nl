@@ -1,0 +1,64 @@
+@charset "utf-8";
+
+/* De wrapper, deze omcirkelt de hele website */
+
+#wrapper {
+	background-color: #f14a4d;
+	height: 100%;
+	width: 100%;
+	padding: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+}
+/* De headerelementen */
+header {
+	background-color: #eb2629;
+	height: 10%;
+	width: 100%;
+	text-align: center;
+	padding-top: 1%;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 45px;
+	margin-top: 0px;
+}
+/* Deze zorgt ervoor dat je kan scrollen in het middelste gedeelte */
+#contentWrapper {
+	height: 70%;
+	width: 95%;
+	background-color: #FFF;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: none;
+}
+/* De actuele content */
+#content {
+	height: 100%;
+	width: 100%;
+	overflow: scroll;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 30px;
+}
+/* De navigatie, deze houdt de iconen onderin in bedwang */
+nav {
+	height: 20%;
+	width: 100%;
+	bottom: 0px;
+	position: absolute;
+}
+/* Per icoon het element! */
+figure {
+	height: 100%;
+	width: 20%;
+	background-color: #eb2629;
+	float: left;
+	padding: 0px;
+	margin: 0px;
+	text-align: center;
+	padding-top: 5%;
+	font-family: Verdana, Geneva, sans-serif;
+}

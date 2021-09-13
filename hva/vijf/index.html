@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="project5.js"></script>
+</head>
+<body>
+<h1>Hola Senor! Como estas?</h1>
+<p>Omdat ik de pijn begrijp van HTML prototypen heb ik bij deze enkele javascript functies voor jullie uitgetypt zodat de lijdensweg verzacht wordt.</p>
+
+<p>Ik leg hier de volgende functies uit:</p>
+
+<ul>
+	<li>de setInterval() functie</li>
+	<li>de setTimeout() functie</li>
+	<li>de window.open() functie</li>
+	<li>de window.close() functie</li>
+</ul>
+
+<p>Als je deze functies combineeeeert kun je een hele hoop dingen doen, een voorbeeld vind je hieronder:</p>
+<p>
+<input type="number" id="input" value="0"/>
+<input type="button" onclick="start()" value="start"/>
+<input type="button" onclick="stop()" value="stop"/>
+</p>
+
+<p>Onderstaande button zorgt ervoor dat er een venster wordt geopend dat weer na 10 seconden wordt gesloten via een setTimeout.</p>
+
+<input type="button" onclick="openWin()" value="Open scherm"/>
+
+<script>
+function openWin() {
+    var henk = window.open("openscherm.html", "_self");
+}
+</script>
+
+</body>
+</html>

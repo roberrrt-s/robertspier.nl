@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This is the ultimate maplestory calculator regarding damage, avoidabillity, accuracy etc.">
+    <meta name="author" content="Robert Spier">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <title>Warrior Damage Calculator</title>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,300" rel="stylesheet" type="text/css">
+    <link href="https://necolas.github.io/normalize.css/3.0.2/normalize.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/style.css"><!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
+    <script src="js/min/damage-warrior-min.js"></script>
+  </head>
+  <body class="warrior">
+    <div class="wrapper">
+      <table>
+        <h1>Warrior Damage Calculator</h1><br>
+        <h2>Insert your stats here to calculate your damage</h2>
+        <tr>
+          <td>Minimal range</td>
+          <td>Maximal range</td>
+          <td>Skillattack in %*</td>
+          <td>Skill bonus in %**</td>
+          <td>Monsters WDEF</td>
+        </tr>
+        <tr>
+          <td>
+            <input type="number" name="minrange" value="0" maxlength="5" size="10" id="minrange">
+          </td>
+          <td>
+            <input type="number" name="maxrange" value="0" maxlength="5" size="10" id="maxrange">
+          </td>
+          <td>
+            <input type="number" name="skilldamage" value="0" maxlength="5" size="10" id="skilldamage">
+          </td>
+          <td>
+            <input type="number" name="skillbonus" value="0" maxlength="5" size="10" id="skillbonus">
+          </td>
+          <td>
+            <input type="number" name="wdef" value="0" maxlength="5" size="10" id="wdef">
+          </td>
+        </tr>
+      </table>
+      <p class="note">
+        *This is the percentual damage of the used skill to attack. <br>
+        **This is the bonus percentage that gets added because of supportive/passive skills.<br>
+        This does <b>not</b> include skills like Maple Warrior that have a direct effect on your range
+      </p>
+      <p></p>
+      <div class="submit">
+        <button id="calculate">Calculate your damage</button>
+        <button id="reset">Reset values</button>
+      </div>
+      <table>
+        <h2>Total damage calculated:</h2>
+        <tr> 
+          <td>
+            <h3>Damage vs Normal monsters</h3>
+          </td>
+          <td> 
+            <h3>Damage vs Strong monsters</h3>
+          </td>
+          <td> 
+            <h3>Damage vs Weak monsters</h3>
+          </td>
+        </tr>
+        <tr>
+          <td>Average Damage:
+            <input type="number" name="avgdmgnormal" value="0" maxlength="3" size="10" id="avgdmgnormal">
+          </td>
+          <td>Average Damage:
+            <input type="number" name="avgdmgweak" value="0" maxlength="3" size="10" id="avgdmgweak">
+          </td>
+          <td>Average Damage:
+            <input type="number" name="avgdmgstrong" value="0" maxlength="3" size="10" id="avgdmgstrong">
+          </td>
+        </tr>
+        <tr>
+          <td>Minimal Damage:
+            <input type="number" name="mindmgnormal" value="0" maxlength="3" size="10" id="mindmgnormal">
+          </td>
+          <td>Minimal Damage:
+            <input type="number" name="mindmgweak" value="0" maxlength="3" size="10" id="mindmgweak">
+          </td>
+          <td>Minimal Damage:
+            <input type="number" name="mindmgstrong" value="0" maxlength="3" size="10" id="mindmgstrong">
+          </td>
+        </tr>
+        <tr>
+          <td>Maximal Damage:
+            <input type="number" name="maxdmgnormal" value="0" maxlength="3" size="10" id="maxdmgnormal">
+          </td>
+          <td>Maximal Damage:
+            <input type="number" name="maxdmgweak" value="0" maxlength="3" size="10" id="maxdmgweak">
+          </td>
+          <td>Maximal Damage:
+            <input type="number" name="maxdmgstrong" value="0" maxlength="3" size="10" id="maxdmgstrong">
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

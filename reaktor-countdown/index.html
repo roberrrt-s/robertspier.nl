@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<title>Reaktor ADE 2017</title>
+	<meta charset='utf-8'>
+	<meta property="og:image" content="http://ade.reaktorevents.nl/res/reaktor.png" />
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="icon" href="favicon.ico" type="image/x-icon" />
+</head>
+<body>
+
+	<div id="placeholder">
+	</div>	
+
+	<div id="overlay"></div>
+
+	<div class="centered">
+		<img src="res/reaktor.png" alt="katharsis">
+		<div id="countdown"><h2></h2></div>
+	</div>
+
+	<div id="ts-shop" class="iframe-container">
+	</div>
+
+	<audio id="audio" autoplay loop>
+		<source src="res/audio/rtr.mp3" type="audio/mpeg">
+		<source src="res/audio/rtr.ogg" type="audio/ogg">
+	</audio>
+
+	<script type="text/javascript" src='lib/three.min.js'></script>
+	<script type="text/javascript" src="//code.jquery.com/jquery.js"></script>
+	<script type="text/javascript" src='lib/jquery.countdown.min.js'></script>
+	<script type="text/javascript" src='lib/postprocessing/EffectComposer.js'></script>
+	<script type="text/javascript" src='lib/postprocessing/RenderPass.js'></script>
+	<script type="text/javascript" src='lib/postprocessing/ShaderPass.js'></script>
+	<script type="text/javascript" src='lib/postprocessing/MaskPass.js'></script> 
+	<script type="text/javascript" src='lib/shaders/CopyShader.js'></script>
+	<script type="text/javascript" src='lib/shaders/FilmShader.js'></script>
+	<script type="text/javascript" src='lib/shaders/RGBShiftShader.js'></script>
+	<script type="text/javascript" src='js/BadTVShader.js'></script>
+	<script type="text/javascript" src='js/StaticShader.js'></script>
+	<script type="text/javascript" src='global.js'></script>
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	  ga('create', 'UA-96112843-1', 'auto');
+	  ga('send', 'pageview');
+	</script>
+	<script type="text/javascript" src="https://shop.ticketscript.com/assets/js/ga-embed.js"></script>
+
+</body>
+</html>

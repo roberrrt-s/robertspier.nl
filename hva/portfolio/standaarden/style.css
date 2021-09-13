@@ -1,0 +1,149 @@
+@charset "UTF-8";
+/* Het declareren van de charset, macht der gewoonte */
+
+@font-face {
+  font-family: 'Signika Negative';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Signika Negative'), local('SignikaNegative-Regular'), url(http://themes.googleusercontent.com/static/fonts/signikanegative/v2/Z-Q1hzbY8uAo3TpTyPFMXRHNiTsuUke-4A8E9eWZJHI.woff) format('woff');
+}
+@font-face {
+  font-family: 'Signika Negative';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Signika Negative Semibold'), local('SignikaNegative-Semibold'), url(http://themes.googleusercontent.com/static/fonts/signikanegative/v2/q5TOjIw4CenPw6C-TW06FtTDf0ppND965ze6FI_VCjU.woff) format('woff');
+}
+@keyframes nyananimation
+{
+0%   {left:-20%; top:0px;}
+100% {left:50%; top:0%;}
+} 
+
+/* 	Onderstaande code levert een fout in de CSS validator op. Na overleg met de feedback docent kreeg ik te horen dat dit niet uitmaakt, omdat het doel van de animatie hierdoor cross-browser werkt. 
+	Ik weet dus wel waarom het fout is (-webkit importeren met een @ kan niet volgens CSS) maar het werkt in de praktijk wel. */
+	
+@-webkit-keyframes nyananimation /* Safari and Chrome */
+{
+0%   {left:-20%; top:0px;}
+100% {left:50%; top:0px;}
+}
+
+body {
+	background-image: url('img/bg.png');
+	background-repeat: repeat;
+	font-family: Tahoma, sans-serif;
+	color: #000000;
+}
+#wrapper {
+	width: 70%;
+	height: auto;
+	margin: auto;
+	border: 5px solid #000;
+	border-radius: 50px;
+	overflow: auto;
+}
+header {
+	background-image: url('img/bg2.png');
+	background-repeat: repeat;
+	width: 98%;
+	height: auto;
+	margin: 0px;
+	padding: 20px 1% 0 1%;
+	float: left;
+	border-top-left-radius: 50px;
+	border-top-right-radius: 50px;
+	transition: ease 0.3s;
+	-webkit-transition: ease 0.3s; /* Fix voor Safari, hopeloos verouderde webkit. */
+}
+header:hover {
+	opacity: 0.8;
+}
+nav {
+	width: 100%;
+	height: auto;
+	background-image: url('img/nav.png');
+	background-repeat: repeat;
+	float: left;
+	border-top: 2px solid #000;
+	border-bottom: 2px solid #000;
+}
+nav ul {
+	float: left;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+}
+nav li {
+	display: inline;
+}
+nav a {
+	float: left;
+	text-decoration: none;
+	color: #000;
+	padding: 10px 20px 10px 20px;
+	width: auto;
+	transition: ease 0.3s;
+	-webkit-transition: ease 0.3s; /* Fix voor Safari, hopeloos verouderde webkit. */
+}
+nav a:hover,
+.active {
+	color: #FFF;
+	background-color: #000;
+}
+article {
+	background-image: url('img/bg2.png');
+	background-repeat: repeat;
+	width: 98%;
+	height: auto;
+	float: left;
+	padding: 1%;
+}
+.center {
+	text-align: center;
+}
+#nyan,
+#nyan img {
+	width: auto;
+	height: auto;
+	position: relative;
+	animation: nyananimation 5s;
+	-webkit-animation: nyananimation 5s; /* Safari and Chrome */
+	animation-iteration-count: infinite;
+	-webkit-animation-iteration-count: infinite;
+	float: left;
+	border: none;
+}
+img {
+	border: 1px solid #000;
+}
+cite {
+	text-align: center;
+}
+footer {
+	background-image: url('img/bg2.png');
+	background-repeat: repeat;
+	width: 100%;
+	height: auto;
+	float: left;
+	text-align: center;
+	border-top: 2px solid #000;
+}
+h1 {
+	font-family: 'Signika Negative', 'Tahoma', sans-serif;
+	text-align: center;
+	color: #000;
+	font-size: 3em;
+}
+h2 {
+	font-family: 'Signika Negative', sans-serif;
+	text-align: left;
+	color: #000;
+	font-size: 2em;
+}
+h3 {
+	font-family: 'Signika Negative', sans-serif;
+	text-align: left;
+	color: #000;
+	font-size: 1em;
+}

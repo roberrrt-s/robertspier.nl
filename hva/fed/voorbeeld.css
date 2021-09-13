@@ -1,0 +1,16 @@
+body {
+	background-color: #333333;
+}
+div {
+	background-color: #0000FF;
+	margin: 5px;
+	width: 150px;
+	height: 150px;
+	float: left;
+}
+.testclass {
+	background-color: #00FF00;
+}
+button {
+	float: left;
+}

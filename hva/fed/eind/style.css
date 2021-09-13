@@ -1,0 +1,308 @@
+/* 	Mobile first
+	Made by Robert Spier
+	Herkansing FeD */
+
+body {
+	background: url("images/school.png") center center repeat;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-flow: row wrap;
+	flex: 1 auto;
+	line-height: 140%;
+	font-family: Arial;
+	max-width: 100%;
+	color: #EEE;
+}
+a {
+	text-decoration: none;
+	color: #3AF;
+}
+a:hover {
+	color: #18F;
+}
+a:active {
+	color: #06F;
+}
+h1 {
+	border-top: 1px solid #FFF;
+	border-bottom: 1px solid #FFF;
+	padding: 0.5em;
+	font-size: 1.5em;
+}
+h2 {
+	font-size: 1.3em;
+}
+body > header {
+	flex: 1 auto;
+	text-align: center;
+	background: url("images/school.png") center center repeat;
+}
+body > header > section > img {
+	width: 29%;
+	height: 29%;
+}
+body > header > nav {
+	width: auto;
+}
+body > header > nav > ul {
+	margin: 0;
+	padding: 0;
+}
+body > header > nav > ul > li {
+	list-style-type: none;
+	background-color: #999;
+	width: 100%;
+	height: 2em;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: center;
+	margin: 0;
+	padding-top: 1em;
+	border-bottom: 1px solid #000;
+}
+body > header > nav > ul > li:first-of-type {
+	border-top: 1px solid #000;
+	margin-top: 1em;
+}
+body > header > nav > ul > li > a {
+	color: #CCF;
+}
+body > section {
+	flex: 1 auto;
+	background: url("images/bg.png") center center repeat;
+	padding: 0.4em;
+}
+body > section > article > header > p {
+	font-size: 0.75em;
+	padding: 0.9em;
+	margin: 0;
+	width: 30%;
+	float: right;
+	clear: right;
+	font-weight: bold;
+}
+body > main {
+	flex: 1 auto;
+	background: url("images/bg.png") center center repeat;
+	padding: 0.4em;
+}
+body > main > h1:first-of-type, body > aside > h1:first-of-type, body > footer > section > h1:first-of-type, body > section > h1:first-of-type {
+	text-transform: uppercase;
+}
+body > aside {
+	flex: 1 auto;
+	background: url("images/bg.png") center center repeat;
+	padding: 0.4em;
+}
+body > footer {
+	flex: 1 auto;
+	background: url("images/bg.png") center center repeat;
+	padding: 0.4em;
+	display: flex;
+	flex-flow: column wrap;
+}
+body > section > form > fieldset {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+}
+body > section > form > fieldset:nth-of-type(2) {
+	display: inherit;
+}
+div {
+	background-color: #999;
+	width: 100%;
+	height: 2em;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: center;
+	margin: 0;
+	padding-bottom: 1em;
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+div:first-of-type {
+	margin-top: 1em;
+}
+figure {
+	background-color: #999;
+	width: 3em;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 0.2em;
+	right: 0.2em;
+	box-shadow: 0 2px 5px #FFF;
+	border-radius: 1em;
+	padding-top: 0.2em;
+}
+figure > img {
+	width: 70%;
+	height: 70%;
+}
+body > main > article > section > img{
+	max-width: 90%;
+	height: auto;
+}
+/* Media queries */
+
+@media only screen and (max-width: 45em) {
+	body > header > h1, body > header > form, body > header > p, audio, video, body > section > article > footer {
+		display: none;
+	}
+/* Javascript classes */
+	.is-invisible {
+	    display: none;
+	}
+	.is-visible {
+	    display: block;
+	}
+	body > section > form > fieldset {
+		max-width: 90%;
+	}
+	body > section > form > fieldset > * {
+		display: inherit;
+		float: left;
+		clear: both;
+		min-width: 96%;
+		text-align: center;
+	}
+	body > section > form > fieldset:nth-of-type(2) > * {
+		float: left;
+	}
+}
+@media only screen and (min-width: 45em) {
+	* {
+		margin: 5px;
+		padding: 5px;
+	}
+	div, figure {
+		display: none;
+	}
+	body > header > section > img {
+		display: none;
+	}
+	audio {
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: 1;
+	}
+	video {
+		margin: auto;
+	}
+	body > header > nav > ul  {
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+	}
+	body > header > nav > ul > li:first-of-type {
+		border: 0;
+		margin: 0;
+	}
+	body > header > nav > ul > li {
+		border: 0;
+		margin: 0;
+	}
+	body {
+		display: flex;
+		flex-flow: row wrap;
+		margin: auto;
+	}
+	body > * {
+		flex: 1 100%;
+	}
+	body > header {
+		background-image: url("images/bg.png");
+		order: 1;	
+		flex: 3 100%;
+		border-radius: 1em;
+	}
+	body > header > h1 {
+		border: 1px solid #000;
+		background-image: url("images/school.png");
+		left: -10px;
+		right: -10px;
+		position: absolute;
+		color: #000;
+		width: 100%;
+		margin-top: 0.6em;
+	}
+	body > header > nav > ul {
+		margin: 0;
+		padding: 0;
+		border: 1px solid #000;
+		background-image: url("images/school.png");
+		left: -1px;
+		right: 0px;
+		position: absolute;
+	}
+	body > header > nav > ul > li {
+		list-style-type: none;
+		width: auto;
+		font-weight: bold;
+		text-transform: uppercase;
+		margin: auto;
+		background-color: inherit;
+		transition: 1s;
+	}
+	body > header > nav > ul > li:hover {
+		opacity: 0.4;
+	}
+	body > header > nav > ul > li > a {
+		color: #000;
+	}
+	body > section:first-of-type {
+		order: 4;
+		flex: 2 35%;
+		border-radius: 1em;
+	}
+	body > section:last-of-type {
+		order: 5;
+		flex: 1 35%;
+		border-radius: 1em;
+	}
+	body > main {
+		order: 2;
+		flex: 2 35%;
+		border-radius: 1em;
+	}
+	body > aside {
+		order: 3;
+		flex: 1 35%;
+		border-radius: 1em;
+	}
+	body > footer {
+		order: 6;
+		flex: 1 100%;
+		border-radius: 1em;
+	}
+	body > footer > section > nav {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: center;
+	}
+	body > section > article > footer {
+		display: none;
+	}
+}
+@media only screen and (min-width: 80em) {
+	body { 
+		max-width: 70%;
+	}
+}
+@media only screen and (min-width: 100em) {
+	body { 
+		max-width: 60%;
+	}
+}
+/* Javascript formulier query */
+
+	.is-invisible-hd {
+	    display: none;
+	}
+	.is-visible-hd {
+	    display: flex;
+	}

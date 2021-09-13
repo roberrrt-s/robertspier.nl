@@ -1,0 +1,18 @@
+body {
+	background-color: #ADADAD;
+}
+section {
+	height: auto;
+	width: 50%;
+	margin: auto;
+	padding-top: 20%;
+}
+h1 {
+	font-family: 'Electrolize', sans-serif;
+}
+h2 {
+	font-family: 'Wellfleet', cursive;
+}
+h3 {
+	font-family: 'Signika Negative', sans-serif;
+}

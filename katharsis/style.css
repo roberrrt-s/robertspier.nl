@@ -1,0 +1,52 @@
+body {
+	background-color: #000;
+	margin: 0px;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+}
+
+#info {
+	color: #fff;
+	position: absolute;
+	bottom: 20px;
+	padding: 5px 20px;
+	font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+	font-weight: 100;
+	font-size: 18px;
+	background-color: #000;
+}
+
+a {
+	color: #DDD;				
+}
+
+.centered {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+img {
+	position: relative;
+	margin-bottom: 20vh;
+}
+
+#overlay {
+	background-color: #000;
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	opacity: .5;
+}
+
+.ts-overlay {
+	margin: auto;
+	max-width: 800px;
+	margin-top: 10vh;
+	position: absolute;
+	opacity: 0.8;
+}

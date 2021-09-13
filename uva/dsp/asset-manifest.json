@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/uva/dsp/static/css/main.290db1f3.chunk.css",
+    "main.js": "/uva/dsp/static/js/main.c8017dc5.chunk.js",
+    "main.js.map": "/uva/dsp/static/js/main.c8017dc5.chunk.js.map",
+    "runtime-main.js": "/uva/dsp/static/js/runtime-main.7e932a07.js",
+    "runtime-main.js.map": "/uva/dsp/static/js/runtime-main.7e932a07.js.map",
+    "static/css/2.11f871ab.chunk.css": "/uva/dsp/static/css/2.11f871ab.chunk.css",
+    "static/js/2.6e8a1427.chunk.js": "/uva/dsp/static/js/2.6e8a1427.chunk.js",
+    "static/js/2.6e8a1427.chunk.js.map": "/uva/dsp/static/js/2.6e8a1427.chunk.js.map",
+    "index.html": "/uva/dsp/index.html",
+    "precache-manifest.4169853f26e2e8c510808b873b5c2ed3.js": "/uva/dsp/precache-manifest.4169853f26e2e8c510808b873b5c2ed3.js",
+    "service-worker.js": "/uva/dsp/service-worker.js",
+    "static/css/2.11f871ab.chunk.css.map": "/uva/dsp/static/css/2.11f871ab.chunk.css.map",
+    "static/css/main.290db1f3.chunk.css.map": "/uva/dsp/static/css/main.290db1f3.chunk.css.map",
+    "static/js/2.6e8a1427.chunk.js.LICENSE": "/uva/dsp/static/js/2.6e8a1427.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7e932a07.js",
+    "static/css/2.11f871ab.chunk.css",
+    "static/js/2.6e8a1427.chunk.js",
+    "static/css/main.290db1f3.chunk.css",
+    "static/js/main.c8017dc5.chunk.js"
+  ]
+}

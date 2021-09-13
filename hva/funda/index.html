@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Funda Roaming</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script type="text/javascript" src="lib/geo-min.js"></script>
+    <script type="text/javascript" src="lib/jquery-min.js"></script>
+    <script type="text/javascript" src="lib/underscore-min.js"></script>
+    <script type="text/javascript" src="js/cmdgeo.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li> <a href="#/home">Home</a></li>
+          <li> <a href="#/roam">Roam</a></li>
+          <li> <a href="#/saved">Favorieten</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section id="home-container">
+      <div class="read-box">
+        <h1>Funda Roaming</h1>
+        <p>Met Funda Roaming kun jij, terwijl je rondloopt kijken of er huizen in de buurt te koop zijn.</p>
+        <h3>Hoe werkt het?</h3>
+        <p>Funda Roaming kijkt naar de locatie op jouw telefoon, en pakt daar alle te koop staande huizen in een straal van 15 kilometer bij, vervolgens is het de bedoeling dat jij rond gaat lopen in de buurt. Op het moment dat jij dicht bij een te koop staande woning komt geven wij je een melding. Deze woningen kun jij vervolgens opslaan in je shortlist, deze is ook weer terug te vinden op funda.nl</p>
+      </div>
+    </section>
+    <section id="tracker-container">
+      <div id="house-preview"></div>
+      <div id="track-box">
+        <div class="load-information">
+          <h3>Je kunt nu de buurt verkennen </h3>
+          <h4>Je ontvangt een melding als er een woning dichtbij is</h4>
+          <div class="loader"></div>
+          <h5>Aan het zoeken...</h5>
+        </div>
+      </div>
+    </section>
+    <section id="saved-container">
+      <div id="saved-box">
+        <h3>Je hebt nog geen woningen opgeslagen!</h3>
+        <h4>Voeg woningen die je tegenkomt toe aan deze lijst.</h4>
+      </div>
+    </section>
+    <div id="map_canvas"></div>
+  </body>
+  <script type="text/javascript" src="js/template.js"></script>
+  <script type="text/javascript" src="js/global.js"></script>
+</html>

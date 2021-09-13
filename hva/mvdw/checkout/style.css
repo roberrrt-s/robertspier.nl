@@ -1,0 +1,31 @@
+body {
+	background: url('mark.jpg') no-repeat fixed;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	background-size: cover;
+  	-o-background-size: cover;
+  	background-position: fixed;
+	overflow: hidden;
+	position: relative;
+}
+
+h1 {
+	font-family: Roboto, "Helvetica Neue",Helvetica,Arial,sans-serif;
+	color: white;
+	font-size: 2em;
+	margin-left: 21%;
+}
+
+#movie {
+	margin-top: auto;
+	margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 600px;
+}
+
+#logo {
+	margin: 0 auto;
+	margin-top: 1%;
+	margin-left: 38%;
+}

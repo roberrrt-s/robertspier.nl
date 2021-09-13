@@ -1,0 +1,37 @@
+9-5-2015
+
+v1.0 Magician Damage Calculator added
+v1.1 Updated roundings, max / min damage, added mdef option for magician calculator
+v1.2 Subtle style changes, reset function added
+v1.2.1 Added favicon, options for accuracy (mag/normal)
+v2.0 Added Accuracy Calculator
+
+10-5-2015
+
+v2.1 Improved formula, added required amount of accuracy needed to 1-hit a monster
+
+11-5-2015
+
+v3.0 Added Magician Accuracy Calculator, small visual tweaking
+v3.1 Improved Accuracy Calculator (minimal required accuracy), minor technical tweaking
+v3.2 Fixed a bug in which AccNormal chance was NaN on empty fields. Updated AccNormal to show minimal 1% / 100% values
+v3.2.1 Updated 'text' to 'number' including resetting bgcolor
+v4.0 Added Heal damage Calculator
+
+12-5-2015
+
+v5.0 Added Warrior Damage Calculator
+
+13-5-2015
+
+v6.0 Fully revamped Accuracy Calculator
+v6.1 Rewriting current code to match other calculators on site (AccCalc as example)
+v6.2 Rewrote Heal damage Calculator, now includes a list of undead monsters. (+ minor tweaking)
+v6.3 Rewrote Magical Damage Calculator, inserted monster variable / updated level difference, style fixes
+
+CREDITS:
+
+Magician Damage Formula:     Tim Wallace
+Accuracy Formula:            Russt (southperry)
+Magician Accuracy Formula:    Nekonecat / Thikket
+Heal damage Formula             (Russt (southperry)
