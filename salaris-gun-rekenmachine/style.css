@@ -1,0 +1,22 @@
+label:first-of-type {
+	display: flex;
+	flex-flow: column nowrap;
+}
+
+label {
+	display: flex;
+	flex-direction: row;
+	margin-right: auto;
+}
+
+label:not(:first-of-type) {
+	margin-top: 1em;
+}
+
+label:not(:first-of-type) input {
+	order: -1;
+}
+
+span {
+	font-weight: 700;
+}
