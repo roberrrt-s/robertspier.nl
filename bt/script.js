@@ -1,6 +1,7 @@
 const main = document.querySelector('main');
 
 fetch('https://opensheet.elk.sh/1igRwZ_HCmEoMpqgMNWrBalOgcMSJItVK1DF-GSovweY/bt')
+	.then(res => res.json())
 	.then(data => {
 		const ul = document.createElement('ul');
 
