@@ -3,6 +3,8 @@ const main = document.querySelector('main');
 fetch('https://opensheet.elk.sh/1igRwZ_HCmEoMpqgMNWrBalOgcMSJItVK1DF-GSovweY/bt')
 	.then(data => {
 		const ul = document.createElement('ul');
+
+		console.log(data);
 		data.forEach(item => {
 			const li = document.createElement('li');
 			const link = document.createElement('a');
