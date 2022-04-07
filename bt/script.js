@@ -13,5 +13,6 @@ fetch('https://opensheet.elk.sh/1igRwZ_HCmEoMpqgMNWrBalOgcMSJItVK1DF-GSovweY/bt'
 		})
 	})
 	.catch(err => {
+		console.log(err);
 		main.innerHTML = 'kapot, jammer, probeer het later nog eens'
 	})
