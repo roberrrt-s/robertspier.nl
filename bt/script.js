@@ -14,6 +14,8 @@ fetch('https://opensheet.elk.sh/1igRwZ_HCmEoMpqgMNWrBalOgcMSJItVK1DF-GSovweY/bt'
 			li.appendChild(link);
 			ul.appendChild(li)
 		})
+
+		main.appendChild(ul);
 	})
 	.catch(err => {
 		console.log(err);
