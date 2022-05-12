@@ -1,3 +1,29 @@
+@font-face {
+    font-family: 'Comic Sans MS';
+    src: url('../fonts/ComicSansMS.woff2') format('woff2'),
+         url('../fonts/ComicSansMS.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@keyframes remove-cookies {
+    0% {
+        transform: translateY(0);
+    }
+
+    20% {
+        transform: translateY(-1rem);
+    }
+    99% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(100%);
+        display: none;
+    }
+}
+
 :root {
   --main-color-alpha: #33f84f;
   --main-color-beta: #af4bf3;
@@ -12,8 +38,11 @@ html {
 }
 
 body {
+    display: flex;
+    flex-flow: column nowrap;
     background: var(--main-color-alpha);
-    padding: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     text-align: center;
 }
 
@@ -25,6 +54,11 @@ h1 {
     line-height: 125%;
     text-align: center;
     font-weight: bold;
+    text-shadow: 1px 1px var(--main-color-beta);
+}
+
+h1 marquee {
+    padding-bottom: .5rem;
 }
 
 h1 span:last-of-type {
@@ -32,8 +66,111 @@ h1 span:last-of-type {
     margin-bottom: 2rem;
 }
 
+section {
+    display: flex;
+    flex-flow: column nowrap;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+section p {
+    font-family: 'Comic Sans MS', Arial, sans-serif;
+    font-size: clamp(.7rem, 2vw, 1.7rem);
+    color: var(--main-color-beta);
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+
+section sub {
+    margin-top: -1rem;
+    font-size: clamp(.5rem, 1.5vw, 1.5rem);
+}
+
+div {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--main-color-alpha);
+    padding: 1rem;
+    border-top: 3px dashed var(--main-color-beta);
+}
+
+div.is-visible {
+    display: block;
+}
+
+div p {
+    font-family: 'Comic Sans MS', Arial, sans-serif;
+    font-size: clamp(1rem, 2vw, 2rem);
+    color: var(--main-color-beta);
+}
+
+div button {
+    margin-top: 1rem;
+    background: var(--main-color-beta);
+    color: var(--main-color-alpha);
+    border: none;
+    padding: .5rem 1rem;
+    font-family: 'Comic Sans MS', Arial, sans-serif;
+    font-size: clamp(.8rem, 2vw, 1.8rem);
+    cursor: pointer;
+}
+
+div.is-closed {
+    animation: remove-cookies .75s ease-in-out forwards;
+}
+
 img {
     width: 100%;
     max-width: 50rem;
     margin: auto;
+    margin-bottom: 3rem;
+}
+
+img:hover,
+img:focus {
+    filter: hue-rotate(360deg) blur(.5px) saturate(70%);
+    transform: scale(1.02);
+    transition: 2s;
+}
+
+a {
+    display: block;
+    margin-bottom: 2rem;
+    text-decoration: none;
+    font-family: 'Comic Sans MS', Arial, sans-serif;
+    background: var(--main-color-beta);
+    color: var(--main-color-alpha);
+    padding: 1rem;
+    font-size: clamp(1rem, 2vw, 2rem);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 3px dotted var(--main-color-alpha);
+    border-radius: .5rem;
+    box-shadow: 0px 3px 2px rgba(175, 75, 243, .5);
+    transition: all ease-in-out .5s;
+}
+
+a:last-of-type {
+    margin-top: 2.5rem;
+}
+
+a:hover,
+a:focus {
+    background: var(--main-color-alpha);
+    color: var(--main-color-beta);
+    border: 3px dotted var(--main-color-beta);
+    transform: rotate(5deg) skew(10deg) scaleX(1.2) scaleY(1.1);
+}
+
+a:last-of-type:hover,
+a:last-of-type:focus {
+    background: var(--main-color-alpha);
+    color: var(--main-color-beta);
+    border: 3px dotted var(--main-color-beta);
+    transform: rotate(2deg) skew(-8deg) scaleX(1.1) scaleY(1.2);
 }
