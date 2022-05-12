@@ -1,0 +1,39 @@
+:root {
+  --main-color-alpha: #33f84f;
+  --main-color-beta: #af4bf3;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    background: var(--main-color-alpha);
+    padding: 2rem;
+    text-align: center;
+}
+
+h1 {
+    display: flex;
+    flex-flow: column nowrap;
+    font-family: 'Comic Sans MS', Arial, sans-serif;
+    font-size: clamp(2rem, 3vw, 4rem);
+    line-height: 125%;
+    text-align: center;
+    font-weight: bold;
+}
+
+h1 span:last-of-type {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+img {
+    width: 100%;
+    max-width: 50rem;
+    margin: auto;
+}
