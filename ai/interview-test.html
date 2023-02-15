@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Reinier Interview</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            font-size: 18px;
+            color: #111;
+            padding: 0 0 1em 0;
+	        background-color: #efe7dd;
+        }
+        table {
+             border-spacing: 10px;
+        }
+        th { text-align: left;}
+        .lt {
+          color: inherit;
+          text-decoration: inherit;
+        }
+        .l {
+          color: #050;
+        }
+        .s {
+            display: inline-block;
+        }
+        .c {
+            display: inline-block;
+        }
+        .e {
+            /*background-color: white; Changing background color */
+            border-radius: 20px; /* Making border radius */
+            width: fit-content; /* Making auto-sizable width */
+            height: fit-content; /* Making auto-sizable height */
+            padding: 5px 30px 5px 30px; /* Making space around letters */
+            font-size: 18px; /* Changing font size */
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+            white-space: nowrap;
+        }
+
+        .t {
+            display: inline-block;
+        }
+        #player {
+            position: sticky;
+            top: 20px;
+            float: right;
+        }
+    </style>
+	<script>
+      function jumptoTime(timepoint, id) {
+        event.preventDefault();
+		let audio = document.querySelector('audio')
+		console.log(audio.currentTime);
+        history.pushState(null, null, "#"+id);
+		console.log(timepoint)
+        audio.currentTime = timepoint;
+        audio.play();
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Reinier Interview</h2>
+  <i>Click on a part of the transcription, to jump to its video, and get an anchor to it in the address bar<br><br></i>
+<div id="player">
+	<audio controls>
+		<source src="./reinier.m4a" type="audio/x-m4a">
+		<source src="./reinier.wav" type="audio/wav">
+		Your browser does not support the audio element.
+	</audio>
+
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:00:0.17" id="00:00:0.17" class="lt" onclick="jumptoTime(0, this.id)">Allright, ik recap even waar we hier zitten.</a>
+				<a href="#00:00:3.53" id="00:00:3.53" class="lt" onclick="jumptoTime(3, this.id)">We zitten in Zaandam, Bagels & Beans.</a>
+				<a href="#00:00:5.21" id="00:00:5.21" class="lt" onclick="jumptoTime(5, this.id)">Ik zit hier met Reinier Laudam en ik ga hem vragen stellen over Schiphol en over accessibility.</a>
+				<a href="#00:00:10.21" id="00:00:10.21" class="lt" onclick="jumptoTime(10, this.id)">Ja.</a>
+				<a href="#00:00:10.77" id="00:00:10.77" class="lt" onclick="jumptoTime(10, this.id)">Ja, ik ben even benieuwd naar het project en wat het project nou precies inhield en wat je rol daarin was.</a>
+				<a href="#00:00:17.89" id="00:00:17.89" class="lt" onclick="jumptoTime(17, this.id)">Ja.</a>
+				<a href="#00:00:18.41" id="00:00:18.41" class="lt" onclick="jumptoTime(18, this.id)">En eigenlijk ben ik als eerst benieuwd een beetje naar je achtergrond.</a>
+				<a href="#00:00:22.13" id="00:00:22.13" class="lt" onclick="jumptoTime(22, this.id)">Dus je bent ook CMD.</a>
+				<a href="#00:00:23.25" id="00:00:23.25" class="lt" onclick="jumptoTime(23, this.id)">Ja, klopt.</a>
+				<a href="#00:00:24.33" id="00:00:24.33" class="lt" onclick="jumptoTime(24, this.id)">Vanuit Rotterdam.</a>
+				<a href="#00:00:25.33" id="00:00:25.33" class="lt" onclick="jumptoTime(25, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:00:10.24" id="00:00:10.24" class="lt" onclick="jumptoTime(10, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:00:17.89" id="00:00:17.89" class="lt" onclick="jumptoTime(17, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:00:22.27" id="00:00:22.27" class="lt" onclick="jumptoTime(22, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:00:23.25" id="00:00:23.25" class="lt" onclick="jumptoTime(23, this.id)">Ja, welkom.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:00:25.34" id="00:00:25.34" class="lt" onclick="jumptoTime(25, this.id)">Ja, in 2008 afgestuurd en toen ben ik vrij snel gaan freelancen als ontwerper.</a>
+				<a href="#00:00:36.34" id="00:00:36.34" class="lt" onclick="jumptoTime(36, this.id)">Dus daarvoor was ik, ik heb het in deeltijd gedaan, want ik was aan het werk in de tussentijd.</a>
+				<a href="#00:00:40.34" id="00:00:40.34" class="lt" onclick="jumptoTime(40, this.id)">Ik was meer een programmeur. Ik was inderdaad een fulltime programmeur.</a>
+				<a href="#00:00:45.34" id="00:00:45.34" class="lt" onclick="jumptoTime(45, this.id)">Front-end, maar ook back-end.</a>
+				<a href="#00:00:47.34" id="00:00:47.34" class="lt" onclick="jumptoTime(47, this.id)">Gaat.</a>
+				<a href="#00:00:48.34" id="00:00:48.34" class="lt" onclick="jumptoTime(48, this.id)">Maar ik wilde toch wel wat meer met ontwerpen bezig gaan, dus daarom de studie.</a>
+				<a href="#00:00:53.34" id="00:00:53.34" class="lt" onclick="jumptoTime(53, this.id)">En toen kwam ik bij de NOS aan de slag als ontwerper.</a>
+				<a href="#00:00:55.34" id="00:00:55.34" class="lt" onclick="jumptoTime(55, this.id)">Daar heb ik eigenlijk alle sites wel een keertje ontworpen, samen met een visual designer.</a>
+				<a href="#00:01:0.34" id="00:01:0.34" class="lt" onclick="jumptoTime(60, this.id)">Dat ging van de Olympische Spelen sites tot echt de hoofdwebsite, tot het Jeugdjournaal en de Nieuwsuurkant om de hoek kijken.</a>
+				<a href="#00:01:7.34" id="00:01:7.34" class="lt" onclick="jumptoTime(67, this.id)">Megaleuk.</a>
+				<a href="#00:01:8.34" id="00:01:8.34" class="lt" onclick="jumptoTime(68, this.id)">Ja, heel leuk. Wel een enorme kans natuurlijk, want ik kwam net van school.</a>
+				<a href="#00:01:11.34" id="00:01:11.34" class="lt" onclick="jumptoTime(71, this.id)">Maar wat ik daar wel zag bij de NOS was dat ze daar nog wel redelijk op een soort oud grafisch ontwerpprincipes ontwierpen.</a>
+				<a href="#00:01:20.34" id="00:01:20.34" class="lt" onclick="jumptoTime(80, this.id)">Dus het was meer vanuit hun cultuur van grafisch ontwerpen en meer uit die hoek en digitaal ontwerpen, interactief ontwerpen.</a>
+				<a href="#00:01:28.34" id="00:01:28.34" class="lt" onclick="jumptoTime(88, this.id)">Dat was, ik wil niet zeggen helemaal nieuw voor ze, maar er was wel een andere richting die ze in konden slaan.</a>
+				<a href="#00:01:33.34" id="00:01:33.34" class="lt" onclick="jumptoTime(93, this.id)">Dus daar heb ik ze mee gehoopt.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:00:34.85" id="00:00:34.85" class="lt" onclick="jumptoTime(34, this.id)">M-hm.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:01:19.82" id="00:01:19.82" class="lt" onclick="jumptoTime(79, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:01:34.33" id="00:01:34.33" class="lt" onclick="jumptoTime(94, this.id)">Oké, vet.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:01:35.14" id="00:01:35.14" class="lt" onclick="jumptoTime(95, this.id)">Ja, en toegankelijkheid was ook wel daar belangrijk, we hebben ook toegankelijkheidsoetsen wel gedaan.</a>
+				<a href="#00:01:41.94" id="00:01:41.94" class="lt" onclick="jumptoTime(101, this.id)">Ook omdat het natuurlijk een soort semi-overheidsinstelling is.</a>
+				<a href="#00:01:45.54" id="00:01:45.54" class="lt" onclick="jumptoTime(105, this.id)">Ja.</a>
+				<a href="#00:01:46.04" id="00:01:46.04" class="lt" onclick="jumptoTime(106, this.id)">Ja, dus gewoon een beetje naar een stand verplicht, dat was niet verbetterlijk verplicht nog.</a>
+				<a href="#00:01:49.74" id="00:01:49.74" class="lt" onclick="jumptoTime(109, this.id)">Maar daar hebben we wel wat aan gaan besteden.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:01:45.52" id="00:01:45.52" class="lt" onclick="jumptoTime(105, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:01:49.85" id="00:01:49.85" class="lt" onclick="jumptoTime(109, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:01:51.64" id="00:01:51.64" class="lt" onclick="jumptoTime(111, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:01:52.96" id="00:01:52.96" class="lt" onclick="jumptoTime(112, this.id)">Ja, en daarna heb ik nog verschillende andere ontwerpdingen gedaan.</a>
+				<a href="#00:01:57.68" id="00:01:57.68" class="lt" onclick="jumptoTime(117, this.id)">En bij Schiphol maakte ik al een insprong naar 2016.</a>
+				<a href="#00:02:3.08" id="00:02:3.08" class="lt" onclick="jumptoTime(123, this.id)">Dus bij de NOS kwam ik 2008 binnen, ongeveer tot 2012 gedaan.</a>
+				<a href="#00:02:7.00" id="00:02:7.00" class="lt" onclick="jumptoTime(127, this.id)">Toen heb ik de app nog ontworpen, dat was de eerste app van de NOS.</a>
+				<a href="#00:02:10.48" id="00:02:10.48" class="lt" onclick="jumptoTime(130, this.id)">En daarna nog wat losse projecten gedaan.</a>
+				<a href="#00:02:12.96" id="00:02:12.96" class="lt" onclick="jumptoTime(132, this.id)">En bij Schiphol heb ik de stap gemaakt van ontwerper naar productowner.</a>
+				<a href="#00:02:16.60" id="00:02:16.60" class="lt" onclick="jumptoTime(136, this.id)">En vanuit die rol had ik veel meer zeggenschap ook over toegankelijkheid...</a>
+				<a href="#00:02:20.60" id="00:02:20.60" class="lt" onclick="jumptoTime(140, this.id)">in het product-overhandbouwwaarde.</a>
+</div>
+
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:02:15.10" id="00:02:15.10" class="lt" onclick="jumptoTime(135, this.id)">Probeer het wel, hè.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:02:22.64" id="00:02:22.64" class="lt" onclick="jumptoTime(142, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:02:24.11" id="00:02:24.11" class="lt" onclick="jumptoTime(144, this.id)">Dus we komen bij Schiphol.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:02:26.51" id="00:02:26.51" class="lt" onclick="jumptoTime(146, this.id)">Vet. En hoe ben je bij Schiphol Beland uiteindelijk?</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:02:27.35" id="00:02:27.35" class="lt" onclick="jumptoTime(147, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:02:30.52" id="00:02:30.52" class="lt" onclick="jumptoTime(150, this.id)">Ja, via, via. Alle freelance opdrachten krijg ik gewoon via, via.</a>
+				<a href="#00:02:34.20" id="00:02:34.20" class="lt" onclick="jumptoTime(154, this.id)">Oh ja.</a>
+				<a href="#00:02:35.20" id="00:02:35.20" class="lt" onclick="jumptoTime(155, this.id)">Dat gaat altijd wel goed, gelukkig.</a>
+				<a href="#00:02:39.28" id="00:02:39.28" class="lt" onclick="jumptoTime(159, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:02:39.55" id="00:02:39.55" class="lt" onclick="jumptoTime(159, this.id)">Ah, nice.</a>
+				<a href="#00:02:40.55" id="00:02:40.55" class="lt" onclick="jumptoTime(160, this.id)">Ja, het netwerk is echt tof.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:02:48.34" id="00:02:48.34" class="lt" onclick="jumptoTime(168, this.id)">En wat was een schip als probleemvraag eigenlijk?</a>
+				<a href="#00:02:52.02" id="00:02:52.02" class="lt" onclick="jumptoTime(172, this.id)">Dus welke problemen heb je opgelost met...</a>
+				<a href="#00:02:54.02" id="00:02:54.02" class="lt" onclick="jumptoTime(174, this.id)">Heel veel.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:02:54.37" id="00:02:54.37" class="lt" onclick="jumptoTime(174, this.id)">Heel veel, want de kern van de Schiphol opdracht was dat we eigenlijk alle digitale diensten die Schiphol in zijn beheer had,</a>
+				<a href="#00:03:3.77" id="00:03:3.77" class="lt" onclick="jumptoTime(183, this.id)">die werden extern ontwikkeld en die gingen we in huis halen.</a>
+				<a href="#00:03:6.77" id="00:03:6.77" class="lt" onclick="jumptoTime(186, this.id)">Dus ik kwam daar als eerste maker, zoals ontwerper kwam ik daar binnen.</a>
+				<a href="#00:03:10.77" id="00:03:10.77" class="lt" onclick="jumptoTime(190, this.id)">En er waren al een paar managers en we gingen eigenlijk een hele afdeling opzetten.</a>
+				<a href="#00:03:14.77" id="00:03:14.77" class="lt" onclick="jumptoTime(194, this.id)">En zodoende kon ik ook mede daardoor de cultuur bepalen van hoe dingen gemaakt werden daar.</a>
+				<a href="#00:03:19.77" id="00:03:19.77" class="lt" onclick="jumptoTime(199, this.id)">Dus alle externe bureaus werden langzaam afgeschaald, we gingen dezelfde website doen, dezelfde app doen.</a>
+				<a href="#00:03:25.77" id="00:03:25.77" class="lt" onclick="jumptoTime(205, this.id)">Ook hele interne APIs werden erop gezet om alle data, stromen die binnen de IT-afdeling van Schiphol al liepen,</a>
+				<a href="#00:03:31.77" id="00:03:31.77" class="lt" onclick="jumptoTime(211, this.id)">om die naar ons te ontsluiten.</a>
+				<a href="#00:03:34.77" id="00:03:34.77" class="lt" onclick="jumptoTime(214, this.id)">En zoals ik zei, ik kwam daar als ontwerper binnen.</a>
+				<a href="#00:03:38.77" id="00:03:38.77" class="lt" onclick="jumptoTime(218, this.id)">Dan gingen we de website ontwerpen, maar gaandeweg werd ook het project van de app opnieuw opbouwen opgestart.</a>
+				<a href="#00:03:45.77" id="00:03:45.77" class="lt" onclick="jumptoTime(225, this.id)">En daar heb ik mezelf een beetje in voorgesteld van joh, ik zou daar wel product owner van willen worden.</a>
+				<a href="#00:03:51.77" id="00:03:51.77" class="lt" onclick="jumptoTime(231, this.id)">Dus dat van ontwerper naar product owner zie je ook wel vaker.</a>
+				<a href="#00:03:54.77" id="00:03:54.77" class="lt" onclick="jumptoTime(234, this.id)">En ook die wens had ik zelf, omdat ik zag dat als ontwerper kan ik maar tot een bepaalde hoogte invloed uitoefenen op het eindproduct.</a>
+				<a href="#00:04:2.77" id="00:04:2.77" class="lt" onclick="jumptoTime(242, this.id)">En als product owner heb je dan veel meer verantwoordelijkheden en veel meer invloed op het eindproduct uiteindelijk.</a>
+				<a href="#00:04:8.77" id="00:04:8.77" class="lt" onclick="jumptoTime(248, this.id)">Dus toen zijn we de app gaan doen.</a>
+				<a href="#00:04:11.77" id="00:04:11.77" class="lt" onclick="jumptoTime(251, this.id)">En ja, binnen vier maanden moest die eigenlijk staan, van het begin tot het eind.</a>
+				<a href="#00:04:17.77" id="00:04:17.77" class="lt" onclick="jumptoTime(257, this.id)">Een hele nieuwe app, nieuwe backend, alles bij elkaar.</a>
+				<a href="#00:04:20.77" id="00:04:20.77" class="lt" onclick="jumptoTime(260, this.id)">En dat was ook wel gelukt, dus de app was ook wel verouderd.</a>
+				<a href="#00:04:23.77" id="00:04:23.77" class="lt" onclick="jumptoTime(263, this.id)">En het externe bureau had ook wel een plan om het weer opnieuw te doen.</a>
+				<a href="#00:04:27.77" id="00:04:27.77" class="lt" onclick="jumptoTime(267, this.id)">Maar onze wens binnen Schiphol was om het allemaal binnen zijn huis te houden.</a>
+</div>
+
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:04:32.28" id="00:04:32.28" class="lt" onclick="jumptoTime(272, this.id)">Ja, dus dat is ook wel goed gelukt.</a>
+				<a href="#00:04:35.28" id="00:04:35.28" class="lt" onclick="jumptoTime(275, this.id)">We hebben daar ook nog een toegangkaartstest gedaan bij Stichting Accessibility.</a>
+				<a href="#00:04:40.28" id="00:04:40.28" class="lt" onclick="jumptoTime(280, this.id)">Oh, vet!</a>
+				<a href="#00:04:41.28" id="00:04:41.28" class="lt" onclick="jumptoTime(281, this.id)">In Houten aan m'n hoofd, of in ieder geval in de buurt van Utrecht.</a>
+				<a href="#00:04:44.28" id="00:04:44.28" class="lt" onclick="jumptoTime(284, this.id)">Ik denk niet dat het Houten was, maar... Ja.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:04:35.08" id="00:04:35.08" class="lt" onclick="jumptoTime(275, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:04:40.36" id="00:04:40.36" class="lt" onclick="jumptoTime(280, this.id)">Oh, vet.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:04:46.20" id="00:04:46.20" class="lt" onclick="jumptoTime(286, this.id)">Ja, volgens mij zit hij in Utrecht, ja.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:04:47.67" id="00:04:47.67" class="lt" onclick="jumptoTime(287, this.id)">Het was bij, hoe heet het, het heeft zo'n stichting, ik weet even niet meer hoe het heet.</a>
+				<a href="#00:04:58.63" id="00:04:58.63" class="lt" onclick="jumptoTime(298, this.id)">Voor mij zat het daar bij in huis, waar mensen met een bepaalde beperking, een uitdaging,</a>
+				<a href="#00:05:6.39" id="00:05:6.39" class="lt" onclick="jumptoTime(306, this.id)">daar ook mee helpen testen.</a>
+				<a href="#00:05:8.19" id="00:05:8.19" class="lt" onclick="jumptoTime(308, this.id)">Bartlemeus.</a>
+				<a href="#00:05:9.19" id="00:05:9.19" class="lt" onclick="jumptoTime(309, this.id)">Ah.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:05:0.27" id="00:05:0.27" class="lt" onclick="jumptoTime(300, this.id)">Mm-hm.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:05:8.96" id="00:05:8.96" class="lt" onclick="jumptoTime(308, this.id)">Oh, ja. Daar werken zij mee samen, ja.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:05:11.29" id="00:05:11.29" class="lt" onclick="jumptoTime(311, this.id)">Ja, dus vanuit die stichting hadden we testers en dat was eigenlijk wel een hele leuke sessie.</a>
+				<a href="#00:05:18.49" id="00:05:18.49" class="lt" onclick="jumptoTime(318, this.id)">Vet!</a>
+				<a href="#00:05:19.49" id="00:05:19.49" class="lt" onclick="jumptoTime(319, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:05:16.49" id="00:05:16.49" class="lt" onclick="jumptoTime(316, this.id)">M-hm.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:05:18.97" id="00:05:18.97" class="lt" onclick="jumptoTime(318, this.id)">Vast niet!</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:05:22.43" id="00:05:22.43" class="lt" onclick="jumptoTime(322, this.id)">En waar ik ook heel erg op heb gehamerd is dat de tester in het team,</a>
+				<a href="#00:05:26.43" id="00:05:26.43" class="lt" onclick="jumptoTime(326, this.id)">dat is vaak een belangrijke schakel om dingen te accepteren in de hele flow van hoe een product wordt gemaakt,</a>
+				<a href="#00:05:32.43" id="00:05:32.43" class="lt" onclick="jumptoTime(332, this.id)">om die ook echt aan te haken op toegankelijkheid.</a>
+				<a href="#00:05:35.43" id="00:05:35.43" class="lt" onclick="jumptoTime(335, this.id)">En daar had ik ook wel geluk mee toen.</a>
+				<a href="#00:05:37.43" id="00:05:37.43" class="lt" onclick="jumptoTime(337, this.id)">Dat was ook echt iemand die daar voor wilde gaan en daar ook wel verstand van had.</a>
+				<a href="#00:05:41.43" id="00:05:41.43" class="lt" onclick="jumptoTime(341, this.id)">Dus bij elke feature die opgeleverd werd, testte hij ook echt heel erg goed de toegankelijkheid.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:05:47.29" id="00:05:47.29" class="lt" onclick="jumptoTime(347, this.id)">Oh, tof. Oh, dat is echt wel heel nice.</a>
+				<a href="#00:05:49.29" id="00:05:49.29" class="lt" onclick="jumptoTime(349, this.id)">Ja.</a>
+				<a href="#00:05:49.79" id="00:05:49.79" class="lt" onclick="jumptoTime(349, this.id)">Oké, vet.</a>
+				<a href="#00:05:50.79" id="00:05:50.79" class="lt" onclick="jumptoTime(350, this.id)">Ja.</a>
+				<a href="#00:05:51.29" id="00:05:51.29" class="lt" onclick="jumptoTime(351, this.id)">Ehm...</a>
+				<a href="#00:05:52.79" id="00:05:52.79" class="lt" onclick="jumptoTime(352, this.id)">Even kijken, dus eigenlijk was het project ontstaan omdat alles in-house kwam en de app was verouderd.</a>
+				<a href="#00:05:59.29" id="00:05:59.29" class="lt" onclick="jumptoTime(359, this.id)">Die werd gewoon helemaal opnieuw geplaatst.</a>
+				<a href="#00:06:0.29" id="00:06:0.29" class="lt" onclick="jumptoTime(360, this.id)">Ja, ze hebben het gehaald.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:05:49.33" id="00:05:49.33" class="lt" onclick="jumptoTime(349, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:05:58.17" id="00:05:58.17" class="lt" onclick="jumptoTime(358, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:05:59.66" id="00:05:59.66" class="lt" onclick="jumptoTime(359, this.id)">Ja, de website was ook verouderd, de app was verouderd, toen werd er eigenaar uitbesteding</a>
+				<a href="#00:06:3.86" id="00:06:3.86" class="lt" onclick="jumptoTime(363, this.id)">gezocht, maar toen werd het plan, dat was voordat ik kwam, werd het plan wel opgepakt</a>
+				<a href="#00:06:6.98" id="00:06:6.98" class="lt" onclick="jumptoTime(366, this.id)">van we moeten eigenlijk de controle zelf nemen.</a>
+				<a href="#00:06:10.10" id="00:06:10.10" class="lt" onclick="jumptoTime(370, this.id)">Het is zo'n belangrijk stuk van de business van Schiphol om goede faciliteiten te bieden</a>
+				<a href="#00:06:18.90" id="00:06:18.90" class="lt" onclick="jumptoTime(378, this.id)">op online.</a>
+				<a href="#00:06:19.90" id="00:06:19.90" class="lt" onclick="jumptoTime(379, this.id)">En daar kwam dit hele traject uit.</a>
+				<a href="#00:06:22.50" id="00:06:22.50" class="lt" onclick="jumptoTime(382, this.id)">Oké, vet!</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:06:22.61" id="00:06:22.61" class="lt" onclick="jumptoTime(382, this.id)">Oké, vet.</a>
+				<a href="#00:06:23.61" id="00:06:23.61" class="lt" onclick="jumptoTime(383, this.id)">En dat heb je dus met een projectteam gedaan, neem ik aan?</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:06:27.69" id="00:06:27.69" class="lt" onclick="jumptoTime(387, this.id)">Ja, een scrumteam. De app was één scrumteam en uiteindelijk stonden er, toen ik wegging, vier scrumteams voor de webkant.</a>
+				<a href="#00:06:34.96" id="00:06:34.96" class="lt" onclick="jumptoTime(394, this.id)">Dus de website bestaat uit verschillende onderdelen.</a>
+				<a href="#00:06:36.93" id="00:06:36.93" class="lt" onclick="jumptoTime(396, this.id)">Eén stuk is de vluchtinformatie, ander stuk is de informatie over de winkels en een stuk wayfinding werd ook nog apart opgericht.</a>
+				<a href="#00:06:43.76" id="00:06:43.76" class="lt" onclick="jumptoTime(403, this.id)">Allright.</a>
+				<a href="#00:06:44.76" id="00:06:44.76" class="lt" onclick="jumptoTime(404, this.id)">Ik ben ook nog een tijdje product owner geweest van de team.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:06:28.83" id="00:06:28.83" class="lt" onclick="jumptoTime(388, this.id)">Dank u wel.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:06:43.90" id="00:06:43.90" class="lt" onclick="jumptoTime(403, this.id)">Allright.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:06:48.27" id="00:06:48.27" class="lt" onclick="jumptoTime(408, this.id)">De apparaten die op Schiphol zelf staan, met die touchscreens enzo, die op te zetten.</a>
+				<a href="#00:06:53.99" id="00:06:53.99" class="lt" onclick="jumptoTime(413, this.id)">Oké, vet.</a>
+				<a href="#00:06:54.79" id="00:06:54.79" class="lt" onclick="jumptoTime(414, this.id)">Ja, dus allemaal verschillende teams waren dat, ja.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:06:54.03" id="00:06:54.03" class="lt" onclick="jumptoTime(414, this.id)">Oké, vet.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:06:56.64" id="00:06:56.64" class="lt" onclick="jumptoTime(416, this.id)">En je werkt dan in sprints natuurlijk, wat je net zei.</a>
+				<a href="#00:07:1.40" id="00:07:1.40" class="lt" onclick="jumptoTime(421, this.id)">Heb je dan in elke sprint, was er dan iemand die continu bezig was met het waarborgen van de toegankelijkheid?</a>
+				<a href="#00:07:7.00" id="00:07:7.00" class="lt" onclick="jumptoTime(427, this.id)">Wel testen dus.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:06:59.98" id="00:06:59.98" class="lt" onclick="jumptoTime(419, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:07:6.90" id="00:07:6.90" class="lt" onclick="jumptoTime(426, this.id)">Wel testen. Hoe we dat in een scrumteam waarborgen is dat een scrumteam vaak een definition of done heeft.</a>
+				<a href="#00:07:13.90" id="00:07:13.90" class="lt" onclick="jumptoTime(433, this.id)">De features of de stories die worden opgeleverd moeten daaraan voldoen.</a>
+				<a href="#00:07:18.90" id="00:07:18.90" class="lt" onclick="jumptoTime(438, this.id)">En we hebben er gewoon voor gezocht dat een onderdeel van die definition of done is de toegankelijkheidsrichtlijn.</a>
+				<a href="#00:07:24.90" id="00:07:24.90" class="lt" onclick="jumptoTime(444, this.id)">Bij de app was dat wel lastig om dat te definiëren, want daar is niet echt een richtlijn voor.</a>
+				<a href="#00:07:30.90" id="00:07:30.90" class="lt" onclick="jumptoTime(450, this.id)">Dan moet je toch teruggrijpen naar de webrichtlijnen. Die gelden niet allemaal voor apps, dat werkt ook weer anders.</a>
+				<a href="#00:07:34.90" id="00:07:34.90" class="lt" onclick="jumptoTime(454, this.id)">Maar rating A hebben we wel minimaal gehouden.</a>
+				<a href="#00:07:39.90" id="00:07:39.90" class="lt" onclick="jumptoTime(459, this.id)">We hebben zelfs een stap gemaakt naar AA als dat nodig is.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:07:18.68" id="00:07:18.68" class="lt" onclick="jumptoTime(438, this.id)">M-hm.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:07:35.02" id="00:07:35.02" class="lt" onclick="jumptoTime(455, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:07:43.28" id="00:07:43.28" class="lt" onclick="jumptoTime(463, this.id)">Oké, dat is wel heel cool. Heel interessant om te weten, voor mij ook.</a>
+				<a href="#00:07:48.28" id="00:07:48.28" class="lt" onclick="jumptoTime(468, this.id)">Ja, ik denk dat dat ook is.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:07:48.74" id="00:07:48.74" class="lt" onclick="jumptoTime(468, this.id)">Ja, ik denk dat dat wel een kern is hoor. Dus de tester is belangrijk hierin, de product owner die wel zicht erop heeft dat het überhaupt in de definitie of dan komt.</a>
+				<a href="#00:07:57.06" id="00:07:57.06" class="lt" onclick="jumptoTime(477, this.id)">Het team bepaalt uiteindelijk de definitie of dan, maar die luistert ook wel heel erg naar de product owner, want die bepaalt de kwaliteit en de doorvoersnelheid wel een beetje van zo'n scrum team.</a>
+				<a href="#00:08:7.06" id="00:08:7.06" class="lt" onclick="jumptoTime(487, this.id)">En het werd ook wel een beetje, ik had wel hulp erbij dat het een Europese regelgeving zou worden in die tijd, misschien ondertussen zelfs al is, ik heb dat niet helemaal meer scherp op het gezier.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:08:7.06" id="00:08:7.06" class="lt" onclick="jumptoTime(487, this.id)">Ja.</a>
+</div>
+
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:08:19.04" id="00:08:19.04" class="lt" onclick="jumptoTime(499, this.id)">Ja, dat 2 is 25 als ik het goed weet.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:08:21.00" id="00:08:21.00" class="lt" onclick="jumptoTime(501, this.id)">Ja, dat is voor commerciële bedrijven, maar voor semi-overheid en overheid was het al eerder.</a>
+				<a href="#00:08:24.50" id="00:08:24.50" class="lt" onclick="jumptoTime(504, this.id)">Ja, dat was wel, ja.</a>
+				<a href="#00:08:25.50" id="00:08:25.50" class="lt" onclick="jumptoTime(505, this.id)">Ja, en Schiphol schipperde daar een beetje tussenin, want het is natuurlijk wel een soort pri...</a>
+				<a href="#00:08:29.00" id="00:08:29.00" class="lt" onclick="jumptoTime(509, this.id)">Ja, Schiphol is aan de ene kant het private, tenminste niet privaat.</a>
+				<a href="#00:08:32.00" id="00:08:32.00" class="lt" onclick="jumptoTime(512, this.id)">Het is een aandeelconstructie met de gemeente Amsterdam, de gemeente Parisie en de overheid.</a>
+				<a href="#00:08:40.50" id="00:08:40.50" class="lt" onclick="jumptoTime(520, this.id)">Maar dat stuk staat wel op zichzelf, dus het is geen echt overheidssysteem.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:08:25.15" id="00:08:25.15" class="lt" onclick="jumptoTime(505, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:08:44.52" id="00:08:44.52" class="lt" onclick="jumptoTime(524, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:08:45.35" id="00:08:45.35" class="lt" onclick="jumptoTime(525, this.id)">Maar toch, anders zijn daar wel oren naar om dat wel goed in te richten gelijk.</a>
+				<a href="#00:08:48.99" id="00:08:48.99" class="lt" onclick="jumptoTime(528, this.id)">Want als je het later moet doen, dan gaat het veel meer tijd en geld kosten.</a>
+				<a href="#00:08:51.79" id="00:08:51.79" class="lt" onclick="jumptoTime(531, this.id)">Ja, precies.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:08:51.87" id="00:08:51.87" class="lt" onclick="jumptoTime(531, this.id)">Ja, precies.</a>
+				<a href="#00:08:54.87" id="00:08:54.87" class="lt" onclick="jumptoTime(534, this.id)">Alright, ik vind het heel nice.</a>
+				<a href="#00:08:58.87" id="00:08:58.87" class="lt" onclick="jumptoTime(538, this.id)">Even kijken hoor.</a>
+				<a href="#00:09:1.87" id="00:09:1.87" class="lt" onclick="jumptoTime(541, this.id)">En de mensen in het team, hadden die ook allemaal affiniteit met accessibility?</a>
+				<a href="#00:09:5.87" id="00:09:5.87" class="lt" onclick="jumptoTime(545, this.id)">Of was het echt in de definitie van Don en vanuit jou?</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:09:9.57" id="00:09:9.57" class="lt" onclick="jumptoTime(549, this.id)">Moet ik even goed nadenken, de app developers die hadden er wel zicht op, die hadden er ook wel wat ervaring mee in ieder geval.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:09:20.99" id="00:09:20.99" class="lt" onclick="jumptoTime(560, this.id)">Hmm?</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:09:22.61" id="00:09:22.61" class="lt" onclick="jumptoTime(562, this.id)">Ja, en ook de tester, die zie ik nog helemaal zitten met zijn koptelefoon op om alles via audio door de app heen te lopen enzo.</a>
+				<a href="#00:09:30.61" id="00:09:30.61" class="lt" onclick="jumptoTime(570, this.id)">Ja, die hadden er op zich wel af en toe tijd mee. De visual ontwerper, niet per se.</a>
+				<a href="#00:09:34.41" id="00:09:34.41" class="lt" onclick="jumptoTime(574, this.id)">Ik vind het een hele goede visual ontwerper, maar wel echt voor mensen die daar geen uitdaging in hebben om een app te gebruiken.</a>
+				<a href="#00:09:40.61" id="00:09:40.61" class="lt" onclick="jumptoTime(580, this.id)">Dus de contrasten waren af en toe nog waar we hem wel even op moesten wijzen enzo.</a>
+				<a href="#00:09:45.21" id="00:09:45.21" class="lt" onclick="jumptoTime(585, this.id)">Maar voor de rest zal het wel goed met de kennis daarover in het team gelukkig.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:09:45.48" id="00:09:45.48" class="lt" onclick="jumptoTime(585, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:09:51.96" id="00:09:51.96" class="lt" onclick="jumptoTime(591, this.id)">Allright, ook goed om te weten.</a>
+				<a href="#00:09:55.96" id="00:09:55.96" class="lt" onclick="jumptoTime(595, this.id)">En uiteindelijk de succes van de oplossing. Hoe is dat uiteindelijk gemeten?</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:09:55.69" id="00:09:55.69" class="lt" onclick="jumptoTime(595, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:10:2.94" id="00:10:2.94" class="lt" onclick="jumptoTime(602, this.id)">Uiteindelijk door een test. De tester zelf bepaalde elke twee weken of het eraan voldeed.</a>
+				<a href="#00:10:7.70" id="00:10:7.70" class="lt" onclick="jumptoTime(607, this.id)">Ik vind het wel fijn om gewoon nog een externe bureau dan zoiets te laten testen, dat hebben we erbij.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:10:11.92" id="00:10:11.92" class="lt" onclick="jumptoTime(611, this.id)">Zelfs met een zwarte lumeus.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:10:14.40" id="00:10:14.40" class="lt" onclick="jumptoTime(614, this.id)">Ja, dat was Stichting Accessibility uit m'n hoofd.</a>
+				<a href="#00:10:17.32" id="00:10:17.32" class="lt" onclick="jumptoTime(617, this.id)">Ik sta ook nog met een soort interviewtje op hun site.</a>
+				<a href="#00:10:20.24" id="00:10:20.24" class="lt" onclick="jumptoTime(620, this.id)">Dus daar kan je ook nog even naar kijken. Ik kan er wel even op sturen.</a>
+				<a href="#00:10:23.32" id="00:10:23.32" class="lt" onclick="jumptoTime(623, this.id)">Als je mijn naam zoekt met accessibility...</a>
+				<a href="#00:10:25.16" id="00:10:25.16" class="lt" onclick="jumptoTime(625, this.id)">dan kom je waarschijnlijk wel op Stichting Accessibility nog een interview tegen.</a>
+				<a href="#00:10:28.56" id="00:10:28.56" class="lt" onclick="jumptoTime(628, this.id)">Uit die schippeltijd.</a>
+				<a href="#00:10:32.84" id="00:10:32.84" class="lt" onclick="jumptoTime(632, this.id)">Ja, dus dat hebben we gedaan met een groep testers...</a>
+				<a href="#00:10:37.92" id="00:10:37.92" class="lt" onclick="jumptoTime(637, this.id)">met verschillende uitdagingen.</a>
+				<a href="#00:10:41.52" id="00:10:41.52" class="lt" onclick="jumptoTime(641, this.id)">Zeg ik dat goed? Ja, handicap is misschien een beetje...</a>
+				<a href="#00:10:44.16" id="00:10:44.16" class="lt" onclick="jumptoTime(644, this.id)">Ja.</a>
+				<a href="#00:10:45.16" id="00:10:45.16" class="lt" onclick="jumptoTime(645, this.id)">Soms vind ik dat zelf niet zo fijn om te horen.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:10:23.11" id="00:10:23.11" class="lt" onclick="jumptoTime(623, this.id)">Ja, super.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:10:28.49" id="00:10:28.49" class="lt" onclick="jumptoTime(628, this.id)">Uit die schippeltijd.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:10:40.86" id="00:10:40.86" class="lt" onclick="jumptoTime(640, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:10:42.60" id="00:10:42.60" class="lt" onclick="jumptoTime(642, this.id)">Ja, inderdaad.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:10:45.49" id="00:10:45.49" class="lt" onclick="jumptoTime(645, this.id)">Soms vinden ze dat zelf niet zo fijn om te horen.</a>
+				<a href="#00:10:47.49" id="00:10:47.49" class="lt" onclick="jumptoTime(647, this.id)">Hij heeft er een heel mooi woord voor.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:10:49.37" id="00:10:49.37" class="lt" onclick="jumptoTime(649, this.id)">Ja, dat zal wel, ja.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:10:52.45" id="00:10:52.45" class="lt" onclick="jumptoTime(652, this.id)">Kan er nu even niet opkomen, maar hij heeft er inderdaad een heel mooi woord voor.</a>
+				<a href="#00:10:55.45" id="00:10:55.45" class="lt" onclick="jumptoTime(655, this.id)">Ja, ze hebben een bepaalde beperking.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:10:53.89" id="00:10:53.89" class="lt" onclick="jumptoTime(653, this.id)">Maar hij heeft er inderdaad een heel mooi woord voor.</a>
+				<a href="#00:10:55.89" id="00:10:55.89" class="lt" onclick="jumptoTime(655, this.id)">Ja, beperkingen in ieder geval. Ze hebben bepaalde beperkingen ten opzichte van mensen die die niet hebben.</a>
+				<a href="#00:10:59.09" id="00:10:59.09" class="lt" onclick="jumptoTime(659, this.id)">Dus visuele beperkingen, maar ook iemand die motorisch in een rolstoel zat en die voor mij alleen maar joysticky dingen kon doen enzo.</a>
+				<a href="#00:11:6.89" id="00:11:6.89" class="lt" onclick="jumptoTime(666, this.id)">Ja, die mensen hebben allemaal die app getest.</a>
+				<a href="#00:11:9.89" id="00:11:9.89" class="lt" onclick="jumptoTime(669, this.id)">Daar kwamen we eigenlijk best wel goede resultaten uit.</a>
+				<a href="#00:11:11.89" id="00:11:11.89" class="lt" onclick="jumptoTime(671, this.id)">De dingen die eruit kwamen hebben we wel voor zo goed als kwaad gefixt.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:10:59.14" id="00:10:59.14" class="lt" onclick="jumptoTime(659, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:11:6.98" id="00:11:6.98" class="lt" onclick="jumptoTime(666, this.id)">Uhu.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:11:15.44" id="00:11:15.44" class="lt" onclick="jumptoTime(675, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:11:16.70" id="00:11:16.70" class="lt" onclick="jumptoTime(676, this.id)">Waar we zelf al mee zaten is, moeten we bijvoorbeeld de kaart die we van Schiphol in de app hebben gebouwd,</a>
+				<a href="#00:11:21.90" id="00:11:21.90" class="lt" onclick="jumptoTime(681, this.id)">moeten we die ook echt voor blinde mensen toegankelijk maken?</a>
+				<a href="#00:11:24.10" id="00:11:24.10" class="lt" onclick="jumptoTime(684, this.id)">Want hoe maak je een kaart toegankelijk voor blinde mensen?</a>
+				<a href="#00:11:27.50" id="00:11:27.50" class="lt" onclick="jumptoTime(687, this.id)">Zijn er niet andere betere hulpmiddelen voor?</a>
+				<a href="#00:11:29.30" id="00:11:29.30" class="lt" onclick="jumptoTime(689, this.id)">Ze kunnen iemand inhuren op Schiphol die ze meeneemt of ze hebben zelf bepaalde hulpmiddelen op de grond enzo.</a>
+				<a href="#00:11:35.90" id="00:11:35.90" class="lt" onclick="jumptoTime(695, this.id)">Dus dat is eigenlijk niet te doen, zo'n kaart helemaal.</a>
+				<a href="#00:11:39.50" id="00:11:39.50" class="lt" onclick="jumptoTime(699, this.id)">Tenminste niet voor ons kleine team op Schiphol was dat.</a>
+				<a href="#00:11:41.70" id="00:11:41.70" class="lt" onclick="jumptoTime(701, this.id)">Misschien voor Google wel, dat zij wel middelen hebben om een kaart toegankelijk te maken voor slechtzienden en blinden.</a>
+				<a href="#00:11:47.30" id="00:11:47.30" class="lt" onclick="jumptoTime(707, this.id)">Maar goed, daar weet ik nog wel dat we daar wel een discussie over hadden.</a>
+				<a href="#00:11:50.70" id="00:11:50.70" class="lt" onclick="jumptoTime(710, this.id)">Maar voor de rest zag het er toch goed uit.</a>
+				<a href="#00:11:53.50" id="00:11:53.50" class="lt" onclick="jumptoTime(713, this.id)">Ik weet niet wat de huidige status van de app is.</a>
+				<a href="#00:11:55.10" id="00:11:55.10" class="lt" onclick="jumptoTime(715, this.id)">Ik ben al een paar jaar weg, dus dan weet je niet hoe het gaat.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:11:46.00" id="00:11:46.00" class="lt" onclick="jumptoTime(705, this.id)">Voorzichtig.</a>
+</div>
+
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:11:55.52" id="00:11:55.52" class="lt" onclick="jumptoTime(715, this.id)">Ja, een paar jaar weg dus.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:11:59.82" id="00:11:59.82" class="lt" onclick="jumptoTime(719, this.id)">Allright, dus een deel van het team had al affiniteit, maar De Visual dan iets minder.</a>
+				<a href="#00:12:8.06" id="00:12:8.06" class="lt" onclick="jumptoTime(728, this.id)">Ja.</a>
+				<a href="#00:12:9.06" id="00:12:9.06" class="lt" onclick="jumptoTime(729, this.id)">Had je nog iets gedaan met een soort van awareness creëren bij De Visual, of dacht je...</a>
+				<a href="#00:12:14.86" id="00:12:14.86" class="lt" onclick="jumptoTime(734, this.id)">Nee, nee, af en weer bezighouden.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:12:8.11" id="00:12:8.11" class="lt" onclick="jumptoTime(728, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:12:15.12" id="00:12:15.12" class="lt" onclick="jumptoTime(735, this.id)">Nee, nee, af en toe wezen we wel gewoon op dingen, of de tester kwam terug met contrasten,</a>
+				<a href="#00:12:20.12" id="00:12:20.12" class="lt" onclick="jumptoTime(740, this.id)">ratio's die niet klopten.</a>
+				<a href="#00:12:21.12" id="00:12:21.12" class="lt" onclick="jumptoTime(741, this.id)">Ja.</a>
+				<a href="#00:12:22.12" id="00:12:22.12" class="lt" onclick="jumptoTime(742, this.id)">Ja, dat soort dingen.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:12:21.18" id="00:12:21.18" class="lt" onclick="jumptoTime(741, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:12:23.38" id="00:12:23.38" class="lt" onclick="jumptoTime(743, this.id)">Oh, right. Dus niet bewust, maar misschien onbewust.</a>
+				<a href="#00:12:26.38" id="00:12:26.38" class="lt" onclick="jumptoTime(746, this.id)">Nee.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:12:26.41" id="00:12:26.41" class="lt" onclick="jumptoTime(746, this.id)">Nee.</a>
+</div>
+
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:12:28.37" id="00:12:28.37" class="lt" onclick="jumptoTime(748, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:12:32.61" id="00:12:32.61" class="lt" onclick="jumptoTime(752, this.id)">Wat ik ga doen met mijn project is, ik loop nu stage, mag ik het niet noemen, maar ik ben</a>
+				<a href="#00:12:43.89" id="00:12:43.89" class="lt" onclick="jumptoTime(763, this.id)">aan het afstuderen bij het bedrijf Active Collective, dat zit in Beverwijk, dat is een</a>
+				<a href="#00:12:47.57" id="00:12:47.57" class="lt" onclick="jumptoTime(767, this.id)">digital agency.</a>
+				<a href="#00:12:48.57" id="00:12:48.57" class="lt" onclick="jumptoTime(768, this.id)">En zij willen heel graag verbeteren als het gaat om disability.</a>
+				<a href="#00:12:54.77" id="00:12:54.77" class="lt" onclick="jumptoTime(774, this.id)">En toen had ik een aangesproken van, joh, ik wil hier iets mee doen.</a>
+				<a href="#00:13:0.17" id="00:13:0.17" class="lt" onclick="jumptoTime(780, this.id)">En zij zei, oké, wij ook.</a>
+				<a href="#00:13:1.61" id="00:13:1.61" class="lt" onclick="jumptoTime(781, this.id)">Dus wat ik nu ga doen met mijn project is hun proces helemaal uitpluizen, dus zij werken</a>
+				<a href="#00:13:6.57" id="00:13:6.57" class="lt" onclick="jumptoTime(786, this.id)">ook op discriminatie of het algemeen, helemaal uitpluizen en het bedrijf helemaal uitpluizen</a>
+				<a href="#00:13:11.73" id="00:13:11.73" class="lt" onclick="jumptoTime(791, this.id)">en dan kijken waar mogelijkheden liggen op verbetering, met het doel dat het eindproduct</a>
+				<a href="#00:13:18.45" id="00:13:18.45" class="lt" onclick="jumptoTime(798, this.id)">uiteindelijk natuurlijk gewoon beter toegankelijk is.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:12:53.63" id="00:12:53.63" class="lt" onclick="jumptoTime(773, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:13:0.08" id="00:13:0.08" class="lt" onclick="jumptoTime(780, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:13:1.23" id="00:13:1.23" class="lt" onclick="jumptoTime(781, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:13:8.23" id="00:13:8.23" class="lt" onclick="jumptoTime(788, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:13:23.87" id="00:13:23.87" class="lt" onclick="jumptoTime(803, this.id)">Als je zoiets hoort, klinkt dat een beetje als wat je bij Schiphol hebt gedaan?</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:13:28.48" id="00:13:28.48" class="lt" onclick="jumptoTime(808, this.id)">Ja, en dat was natuurlijk niet de reden dat ik daar zat bij Schiphol.</a>
+				<a href="#00:13:32.28" id="00:13:32.28" class="lt" onclick="jumptoTime(812, this.id)">Het was meer iets wat ik belangrijk vond.</a>
+				<a href="#00:13:36.08" id="00:13:36.08" class="lt" onclick="jumptoTime(816, this.id)">Sommige mensen die hiermee bezig zijn halen ook wel het verschil erbij dat er ook extra business oplevert.</a>
+				<a href="#00:13:43.08" id="00:13:43.08" class="lt" onclick="jumptoTime(823, this.id)">Ik weet niet of die resultaten duidelijk genoeg zijn om dat te zien, als je die dingen toegankelijk maakt.</a>
+				<a href="#00:13:52.48" id="00:13:52.48" class="lt" onclick="jumptoTime(832, this.id)">Maar dat kan ook een drijver zijn voor een organisatie om dat te doen.</a>
+				<a href="#00:13:55.68" id="00:13:55.68" class="lt" onclick="jumptoTime(835, this.id)">En de wetgeving is voor mij ook heel belangrijk.</a>
+				<a href="#00:13:57.28" id="00:13:57.28" class="lt" onclick="jumptoTime(837, this.id)">Dus uiteindelijk moeten organisaties hier wel in mee.</a>
+				<a href="#00:14:0.88" id="00:14:0.88" class="lt" onclick="jumptoTime(840, this.id)">Wat ook goed is natuurlijk, dat die regelgeving er is.</a>
+				<a href="#00:14:4.48" id="00:14:4.48" class="lt" onclick="jumptoTime(844, this.id)">Want je ziet toch in de praktijk dat het wel een van de eerste dingen is die wel afvallen als er gesneden moet worden,</a>
+				<a href="#00:14:9.68" id="00:14:9.68" class="lt" onclick="jumptoTime(849, this.id)">inkosten of snelheid moet gemaakt worden.</a>
+				<a href="#00:14:12.28" id="00:14:12.28" class="lt" onclick="jumptoTime(852, this.id)">Dat daar wel de hoekjes worden afgesneden bij toegankelijkheid.</a>
+				<a href="#00:14:15.08" id="00:14:15.08" class="lt" onclick="jumptoTime(855, this.id)">Omdat ook, ook vooral met webprojecten, frontenders die weten er wel van, maar die vinden het ook af en toe lastig</a>
+				<a href="#00:14:20.48" id="00:14:20.48" class="lt" onclick="jumptoTime(860, this.id)">omdat ze toch zelf ook meer moeten testen.</a>
+				<a href="#00:14:22.68" id="00:14:22.68" class="lt" onclick="jumptoTime(862, this.id)">Ze moeten bepaalde taborders door een menu moeten ineens gaan vaststellen, terwijl normaal een browser dat doet.</a>
+				<a href="#00:14:27.28" id="00:14:27.28" class="lt" onclick="jumptoTime(867, this.id)">En als ze dan rare visuele ontwerpen hebben moeten programmeren,</a>
+				<a href="#00:14:31.08" id="00:14:31.08" class="lt" onclick="jumptoTime(871, this.id)">dan zit die taborder niet goed in elkaar zoals het visueel is en zo.</a>
+				<a href="#00:14:34.28" id="00:14:34.28" class="lt" onclick="jumptoTime(874, this.id)">Ja, dat vinden ze af en toe wel een beetje lastig, heb ik het idee.</a>
+				<a href="#00:14:37.48" id="00:14:37.48" class="lt" onclick="jumptoTime(877, this.id)">Maar juist door het vanaf het begin al goed te krijgen.</a>
+				<a href="#00:14:42.68" id="00:14:42.68" class="lt" onclick="jumptoTime(882, this.id)">Vaak hebben webprojecten ook een bouwproces in hun proces zitten.</a>
+				<a href="#00:14:48.08" id="00:14:48.08" class="lt" onclick="jumptoTime(888, this.id)">Dus waar een site wordt gecompileerd eigenlijk.</a>
+				<a href="#00:14:51.28" id="00:14:51.28" class="lt" onclick="jumptoTime(891, this.id)">En daar kan je ook tools installeren om te checken of iets een bepaalde accessibility rating heeft.</a>
+				<a href="#00:14:56.68" id="00:14:56.68" class="lt" onclick="jumptoTime(896, this.id)">Nou is dat niet bij alle regels zo, maar wel bij heel veel regels die technisch te testen zijn.</a>
+				<a href="#00:15:1.88" id="00:15:1.88" class="lt" onclick="jumptoTime(901, this.id)">En dan komt er gewoon een rapportje uit en dan moeten ze maar zorgen dat het gefixt wordt.</a>
+				<a href="#00:15:5.08" id="00:15:5.08" class="lt" onclick="jumptoTime(905, this.id)">Ja, precies.</a>
+				<a href="#00:15:6.08" id="00:15:6.08" class="lt" onclick="jumptoTime(906, this.id)">Dus in dat soort stappen kun je ook dit wel borgen.</a>
+				<a href="#00:15:8.88" id="00:15:8.88" class="lt" onclick="jumptoTime(908, this.id)">Dus in het automatisch testen, in het testen met een tester, in een periodieke test met een externe bureau.</a>
+				<a href="#00:15:15.28" id="00:15:15.28" class="lt" onclick="jumptoTime(915, this.id)">Of met een consultant die af en toe even langskomt, dat hebben we ook bij Schiphol gedaan.</a>
+				<a href="#00:15:20.88" id="00:15:20.88" class="lt" onclick="jumptoTime(920, this.id)">Ja, dat is wat je aan het gaan doen.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:13:57.47" id="00:13:57.47" class="lt" onclick="jumptoTime(837, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:14:35.81" id="00:14:35.81" class="lt" onclick="jumptoTime(875, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:15:1.92" id="00:15:1.92" class="lt" onclick="jumptoTime(901, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:15:5.17" id="00:15:5.17" class="lt" onclick="jumptoTime(905, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:15:22.15" id="00:15:22.15" class="lt" onclick="jumptoTime(922, this.id)">Dat soort zaken.</a>
+				<a href="#00:15:23.15" id="00:15:23.15" class="lt" onclick="jumptoTime(923, this.id)">Oké, nice.</a>
+				<a href="#00:15:24.15" id="00:15:24.15" class="lt" onclick="jumptoTime(924, this.id)">Ik had ook altijd dit idee, ik was ook bezig met het opstarten van een bedrijf, dat heb</a>
+				<a href="#00:15:31.59" id="00:15:31.59" class="lt" onclick="jumptoTime(931, this.id)">ik uiteindelijk niet gedaan.</a>
+				<a href="#00:15:32.59" id="00:15:32.59" class="lt" onclick="jumptoTime(932, this.id)">Maar uiteindelijk was ik ook bezig met eigenlijk al dit onderwerp.</a>
+				<a href="#00:15:38.99" id="00:15:38.99" class="lt" onclick="jumptoTime(938, this.id)">En toen heb ik heel veel developers gesproken en toen zei ik van ja, dat wil ik graag doen.</a>
+				<a href="#00:15:42.43" id="00:15:42.43" class="lt" onclick="jumptoTime(942, this.id)">En eigenlijk elke keer dat ik terug hoorde komen was, het is niet leuk.</a>
+				<a href="#00:15:46.63" id="00:15:46.63" class="lt" onclick="jumptoTime(946, this.id)">Nee.</a>
+				<a href="#00:15:47.63" id="00:15:47.63" class="lt" onclick="jumptoTime(947, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:15:42.26" id="00:15:42.26" class="lt" onclick="jumptoTime(942, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:15:46.57" id="00:15:46.57" class="lt" onclick="jumptoTime(946, this.id)">Nee, nee, nee. Dat is ook omdat ze er zelf geen profijt van hebben, denk ik.</a>
+				<a href="#00:15:50.85" id="00:15:50.85" class="lt" onclick="jumptoTime(950, this.id)">Nee.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:15:48.44" id="00:15:48.44" class="lt" onclick="jumptoTime(948, this.id)">Nee, dat is ook omdat ze er zelf geen profijt van hebben, denk ik.</a>
+				<a href="#00:15:50.92" id="00:15:50.92" class="lt" onclick="jumptoTime(950, this.id)">Nee, precies. En ik denk ook omdat het komt dat gewoon heel veel mensen het wel misschien willen doen,</a>
+				<a href="#00:15:57.08" id="00:15:57.08" class="lt" onclick="jumptoTime(957, this.id)">vooral bedrijven, maar gewoon niet zo heel goed weten hoe.</a>
+				<a href="#00:16:0.12" id="00:16:0.12" class="lt" onclick="jumptoTime(960, this.id)">En als je dit soort dingen dus achteraf allemaal toe moet passen,</a>
+				<a href="#00:16:2.84" id="00:16:2.84" class="lt" onclick="jumptoTime(962, this.id)">dan ben je eigenlijk alleen maar een bugfixer en dat is inderdaad niet leuk.</a>
+				<a href="#00:16:5.36" id="00:16:5.36" class="lt" onclick="jumptoTime(965, this.id)">En het is onzichtbaar ook.</a>
+				<a href="#00:16:6.44" id="00:16:6.44" class="lt" onclick="jumptoTime(966, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:16:3.90" id="00:16:3.90" class="lt" onclick="jumptoTime(963, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:16:5.38" id="00:16:5.38" class="lt" onclick="jumptoTime(965, this.id)">En het is onzichtbaar ook, dus het is niet zoiets dat je kan laten zien in een demo.</a>
+				<a href="#00:16:9.38" id="00:16:9.38" class="lt" onclick="jumptoTime(969, this.id)">Je kan het wel laten zien, maar dan heb je er veel meer moeite voor.</a>
+				<a href="#00:16:12.38" id="00:16:12.38" class="lt" onclick="jumptoTime(972, this.id)">Het installeren van een screenreader of op andere manieren door met een toetsenbord door de website heen lopen.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:16:9.43" id="00:16:9.43" class="lt" onclick="jumptoTime(969, this.id)">Je kan het wel.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:16:12.05" id="00:16:12.05" class="lt" onclick="jumptoTime(972, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:16:16.88" id="00:16:16.88" class="lt" onclick="jumptoTime(976, this.id)">Ja precies, ja dus dat woord ik dan heel vaak en dan denk ik ja, ja het is misschien, ja</a>
+				<a href="#00:16:25.78" id="00:16:25.78" class="lt" onclick="jumptoTime(985, this.id)">misschien is het niet leuk, misschien wordt het gewoon niet leuk gemaakt, dan kun je het</a>
+				<a href="#00:16:29.98" id="00:16:29.98" class="lt" onclick="jumptoTime(989, this.id)">misschien nog een keer doen, ja misschien is het niet leuk, misschien wordt het gewoon</a>
+				<a href="#00:16:48.98" id="00:16:48.98" class="lt" onclick="jumptoTime(1008, this.id)">niet leuk gemaakt, dan kun je het misschien nog een keer doen, dan kun je het misschien</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:16:21.37" id="00:16:21.37" class="lt" onclick="jumptoTime(981, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:16:22.78" id="00:16:22.78" class="lt" onclick="jumptoTime(982, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:16:29.38" id="00:16:29.38" class="lt" onclick="jumptoTime(989, this.id)">Misschien kan je ook nog wel het haakje vinden, ik heb dat zelf nooit gedaan, maar in het echte leven, zoals we hier zitten, heb je ook regels, zoals een restaurant moet rolstoelvriendelijk zijn.</a>
+				<a href="#00:16:39.38" id="00:16:39.38" class="lt" onclick="jumptoTime(999, this.id)">Maar ik kan me ook voorstellen dat interieurontwerpers of architecten daar ook weleens mee zitten.</a>
+				<a href="#00:16:46.38" id="00:16:46.38" class="lt" onclick="jumptoTime(1006, this.id)">Dat ze iets moois hebben gemaakt en dat ze denken, oh, toch weer die regels toepassen voor mensen die minder makkelijk ter been zijn.</a>
+				<a href="#00:16:53.38" id="00:16:53.38" class="lt" onclick="jumptoTime(1013, this.id)">Dat ze daar een aanpassing moeten doen aan wat in hun ogen mooi ontwerpt.</a>
+				<a href="#00:16:57.38" id="00:16:57.38" class="lt" onclick="jumptoTime(1017, this.id)">Ja, precies.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:16:35.22" id="00:16:35.22" class="lt" onclick="jumptoTime(995, this.id)">Dus als we hier zitten, heb je ook regels.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:16:53.12" id="00:16:53.12" class="lt" onclick="jumptoTime(1013, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:16:56.99" id="00:16:56.99" class="lt" onclick="jumptoTime(1016, this.id)">Ja precies. Dus dat is altijd ook iets waar ik tegenaan loop als ik het dan met developers</a>
+				<a href="#00:17:3.19" id="00:17:3.19" class="lt" onclick="jumptoTime(1023, this.id)">erover heb of met, ja ook designers die dan inderdaad vaak is het met contrast ook dingen</a>
+				<a href="#00:17:8.83" id="00:17:8.83" class="lt" onclick="jumptoTime(1028, this.id)">dat je een ontwerp ziet dat je denkt, oh ja, maar dat gaat niet, dat gaat niet werken.</a>
+				<a href="#00:17:13.59" id="00:17:13.59" class="lt" onclick="jumptoTime(1033, this.id)">Ik denk ook wel dat.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:16:58.93" id="00:16:58.93" class="lt" onclick="jumptoTime(1018, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:17:2.67" id="00:17:2.67" class="lt" onclick="jumptoTime(1022, this.id)">Nou...</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:17:9.10" id="00:17:9.10" class="lt" onclick="jumptoTime(1029, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:17:13.47" id="00:17:13.47" class="lt" onclick="jumptoTime(1033, this.id)">Ik denk ook wel dat het onwetentijd vaak is hoor, want dat zag ik ook wel bij de developers die we meenamen of die een film achterachter zien kregen van die testdag, met mensen uit de doelgroep, dat ze dat toch wel meer het kwartje vielen, van zo lopen ze er dan doorheen of daar lopen ze tegenaan, of ze kunnen gewoon echt niet meer dat formulier afmaken, dat is wel echt heel gevelend voor die mensen, en dat levert ook gewoon een slechte reputatie op, een slechte business, ja, dat is ook wel echt een goede onwetendheid.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:17:32.14" id="00:17:32.14" class="lt" onclick="jumptoTime(1052, this.id)">Ja, precies.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:17:36.31" id="00:17:36.31" class="lt" onclick="jumptoTime(1056, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:17:40.00" id="00:17:40.00" class="lt" onclick="jumptoTime(1060, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:17:42.87" id="00:17:42.87" class="lt" onclick="jumptoTime(1062, this.id)">Dus dat is ook leuk om mee te nemen.</a>
+				<a href="#00:17:45.15" id="00:17:45.15" class="lt" onclick="jumptoTime(1065, this.id)">Ja.</a>
+				<a href="#00:17:46.15" id="00:17:46.15" class="lt" onclick="jumptoTime(1066, this.id)">Er valt ook heel veel stukjen van het stukje awareness.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:17:48.86" id="00:17:48.86" class="lt" onclick="jumptoTime(1068, this.id)">Ja, want dat is het er vaak ook.</a>
+				<a href="#00:17:50.86" id="00:17:50.86" class="lt" onclick="jumptoTime(1070, this.id)">Ze hebben mensen niet in hun omgeving die tegen dat soort dingen aanlopen.</a>
+				<a href="#00:17:54.46" id="00:17:54.46" class="lt" onclick="jumptoTime(1074, this.id)">Nee, precies.</a>
+				<a href="#00:17:55.46" id="00:17:55.46" class="lt" onclick="jumptoTime(1075, this.id)">Ze weten het niet.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:17:56.44" id="00:17:56.44" class="lt" onclick="jumptoTime(1076, this.id)">Ja, dat waren eigenlijk mijn vragen.</a>
+				<a href="#00:18:2.44" id="00:18:2.44" class="lt" onclick="jumptoTime(1082, this.id)">Nou mooi man.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:18:2.41" id="00:18:2.41" class="lt" onclick="jumptoTime(1082, this.id)">Nou, mooi. Het is nu februari. Waar zit je in je traject?</a>
+				<a href="#00:18:5.41" id="00:18:5.41" class="lt" onclick="jumptoTime(1085, this.id)">Het is... Ik ben baas.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:18:5.79" id="00:18:5.79" class="lt" onclick="jumptoTime(1085, this.id)">Ik ben maandag begonnen.</a>
+				<a href="#00:18:7.19" id="00:18:7.19" class="lt" onclick="jumptoTime(1087, this.id)">Oké, zo vroeg.</a>
+				<a href="#00:18:8.19" id="00:18:8.19" class="lt" onclick="jumptoTime(1088, this.id)">Dus ik ben net begonnen, ja.</a>
+				<a href="#00:18:9.19" id="00:18:9.19" class="lt" onclick="jumptoTime(1089, this.id)">Leuk.</a>
+				<a href="#00:18:10.19" id="00:18:10.19" class="lt" onclick="jumptoTime(1090, this.id)">En ik was de afgelopen half jaren wel veel bezig met research, omdat ik een minor onderneemschap</a>
+				<a href="#00:18:15.59" id="00:18:15.59" class="lt" onclick="jumptoTime(1095, this.id)">deed, met het idee dat ik dan zelf een agency wilde beginnen hierin.</a>
+				<a href="#00:18:19.59" id="00:18:19.59" class="lt" onclick="jumptoTime(1099, this.id)">Tja!</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:18:7.19" id="00:18:7.19" class="lt" onclick="jumptoTime(1087, this.id)">Oké, zo goed. Leuk.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:18:18.90" id="00:18:18.90" class="lt" onclick="jumptoTime(1098, this.id)">Op zich is dat wel een goed idee, want er komt heel veel werk aan voor toegankelijkheids-experts.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:18:21.55" id="00:18:21.55" class="lt" onclick="jumptoTime(1101, this.id)">Ja, zie je.</a>
+</div>
+
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:18:25.77" id="00:18:25.77" class="lt" onclick="jumptoTime(1105, this.id)">Ja absoluut. Ik zit nu aan het bedenken aan meer een soort freelance-basis.</a>
+				<a href="#00:18:32.77" id="00:18:32.77" class="lt" onclick="jumptoTime(1112, this.id)">Maar ik heb dus al heel veel research gedaan, ook naar de wetgeving en ook naar accessibility.</a>
+				<a href="#00:18:37.77" id="00:18:37.77" class="lt" onclick="jumptoTime(1117, this.id)">Heel veel webinars gevolgd, bijvoorbeeld ook van Hazzle Inclusion, ik weet niet of je die toevallig kent.</a>
+				<a href="#00:18:41.77" id="00:18:41.77" class="lt" onclick="jumptoTime(1121, this.id)">Dat is een Engels bedrijf.</a>
+				<a href="#00:18:44.77" id="00:18:44.77" class="lt" onclick="jumptoTime(1124, this.id)">En zij doen heel veel in Engeland met accessibility, een soort van stichting accessibility, maar dan Engels en iets commerciëler.</a>
+				<a href="#00:18:51.77" id="00:18:51.77" class="lt" onclick="jumptoTime(1131, this.id)">We hebben elke maand een webinar die altijd heel interessant zijn.</a>
+				<a href="#00:18:54.77" id="00:18:54.77" class="lt" onclick="jumptoTime(1134, this.id)">En de stichting accessibility had in oktober vorig jaar natuurlijk de week van accessibility.</a>
+				<a href="#00:18:59.77" id="00:18:59.77" class="lt" onclick="jumptoTime(1139, this.id)">Allemaal webinars, dus die heb ik ook allemaal gekeken.</a>
+				<a href="#00:19:2.77" id="00:19:2.77" class="lt" onclick="jumptoTime(1142, this.id)">Dus ik ben er wel al lang bezig met dit onderwerp.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:18:29.23" id="00:18:29.23" class="lt" onclick="jumptoTime(1109, this.id)">Dat is een financiele basis.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:18:36.58" id="00:18:36.58" class="lt" onclick="jumptoTime(1116, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:18:49.64" id="00:18:49.64" class="lt" onclick="jumptoTime(1129, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:19:5.12" id="00:19:5.12" class="lt" onclick="jumptoTime(1145, this.id)">Ja. Heb je nog meer namen gekregen van Facilius?</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:19:10.96" id="00:19:10.96" class="lt" onclick="jumptoTime(1150, this.id)">Ja, in het verleden. Aint is een bedrijf, die had ik benaderd, maar die hebben uiteindelijk geen tijd voor mij.</a>
+				<a href="#00:19:19.28" id="00:19:19.28" class="lt" onclick="jumptoTime(1159, this.id)">En Q42 heb ik ook een keer geïnterviewd.</a>
+				<a href="#00:19:22.92" id="00:19:22.92" class="lt" onclick="jumptoTime(1162, this.id)">Wat was je heet? Johan, dacht ik. Of John. Johan. Zoiets. Die had ik ook geïnterviewd.</a>
+				<a href="#00:19:32.20" id="00:19:32.20" class="lt" onclick="jumptoTime(1172, this.id)">En verder spreek ik sowieso al veel met mensen, omdat ik nu ook een beetje in de wereld beland ben.</a>
+				<a href="#00:19:38.80" id="00:19:38.80" class="lt" onclick="jumptoTime(1178, this.id)">Dus elke keer spreek ik weer van de Syrisch Weer en dan heeft het weer een nieuwe naam voor me.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:19:13.88" id="00:19:13.88" class="lt" onclick="jumptoTime(1153, this.id)">Ja, in Utrecht.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:19:17.64" id="00:19:17.64" class="lt" onclick="jumptoTime(1157, this.id)">Oké.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:19:21.15" id="00:19:21.15" class="lt" onclick="jumptoTime(1161, this.id)">Oké.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:19:42.48" id="00:19:42.48" class="lt" onclick="jumptoTime(1182, this.id)">Ja, oké. Heb je Peter van Grieken al gehoord, de naam?</a>
+				<a href="#00:19:47.24" id="00:19:47.24" class="lt" onclick="jumptoTime(1187, this.id)">Nee.</a>
+				<a href="#00:19:48.36" id="00:19:48.36" class="lt" onclick="jumptoTime(1188, this.id)">Die was eerst ook freelance accessibility consultant, expert.</a>
+				<a href="#00:19:55.12" id="00:19:55.12" class="lt" onclick="jumptoTime(1195, this.id)">Ook front-end developer.</a>
+				<a href="#00:19:57.08" id="00:19:57.08" class="lt" onclick="jumptoTime(1197, this.id)">Maar die is nu, sinds eind vorig jaar, bij PostNL intern gaan werken...</a>
+				<a href="#00:20:0.68" id="00:20:0.68" class="lt" onclick="jumptoTime(1200, this.id)">om dit allemaal te regelen. Dus misschien ook wel interessant.</a>
+				<a href="#00:20:3.92" id="00:20:3.92" class="lt" onclick="jumptoTime(1203, this.id)">Peter van Grieken?</a>
+				<a href="#00:20:5.04" id="00:20:5.04" class="lt" onclick="jumptoTime(1205, this.id)">Ja, Peter van Grieken.</a>
+				<a href="#00:20:6.96" id="00:20:6.96" class="lt" onclick="jumptoTime(1206, this.id)">Ja, ook een goede vriend van me.</a>
+				<a href="#00:20:10.04" id="00:20:10.04" class="lt" onclick="jumptoTime(1210, this.id)">Dankjewel</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:19:47.36" id="00:19:47.36" class="lt" onclick="jumptoTime(1187, this.id)">Doei!</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:19:56.35" id="00:19:56.35" class="lt" onclick="jumptoTime(1196, this.id)">Mhm.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:20:2.49" id="00:20:2.49" class="lt" onclick="jumptoTime(1202, this.id)">Misschien ook wel interessant.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:20:10.04" id="00:20:10.04" class="lt" onclick="jumptoTime(1210, this.id)">Oké, nice.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:20:11.30" id="00:20:11.30" class="lt" onclick="jumptoTime(1211, this.id)">Het ligt ook wel een beetje aan Peter dat ik er vaker op let.</a>
+				<a href="#00:20:13.78" id="00:20:13.78" class="lt" onclick="jumptoTime(1213, this.id)">Ik denk van ja, ik kan niks opleveren als Peter ziet dat ik het allemaal niet goed heb gedaan.</a>
+				<a href="#00:20:18.10" id="00:20:18.10" class="lt" onclick="jumptoTime(1218, this.id)">Maar hij is dus nu intern bij PostNL bij de digitale afdeling van alles aan het regelen in het toegankelijkheidsgebied.</a>
+				<a href="#00:20:24.98" id="00:20:24.98" class="lt" onclick="jumptoTime(1224, this.id)">Dus dat is op zich ook wel een grote organisatie met zijn eigen processen en hoe borgt hij het dan daarin?</a>
+				<a href="#00:20:30.10" id="00:20:30.10" class="lt" onclick="jumptoTime(1230, this.id)">Dat is eigenlijk ook wel interessant.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:20:16.79" id="00:20:16.79" class="lt" onclick="jumptoTime(1216, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:20:25.01" id="00:20:25.01" class="lt" onclick="jumptoTime(1225, this.id)">Oké, vet.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:20:30.17" id="00:20:30.17" class="lt" onclick="jumptoTime(1230, this.id)">Dat is eigenlijk ook wel interessant.</a>
+				<a href="#00:20:31.17" id="00:20:31.17" class="lt" onclick="jumptoTime(1231, this.id)">Dat is zeker interessant.</a>
+				<a href="#00:20:32.17" id="00:20:32.17" class="lt" onclick="jumptoTime(1232, this.id)">Heb je toevallig een e-mailadres voor hen?</a>
+				<a href="#00:20:35.17" id="00:20:35.17" class="lt" onclick="jumptoTime(1235, this.id)">Of dat je die met haar kan mailen?</a>
+				<a href="#00:20:36.17" id="00:20:36.17" class="lt" onclick="jumptoTime(1236, this.id)">Ja, zeker.</a>
+				<a href="#00:20:37.17" id="00:20:37.17" class="lt" onclick="jumptoTime(1237, this.id)">Ja hoor, heb ik.</a>
+				<a href="#00:20:38.17" id="00:20:38.17" class="lt" onclick="jumptoTime(1238, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:20:32.04" id="00:20:32.04" class="lt" onclick="jumptoTime(1232, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:20:35.60" id="00:20:35.60" class="lt" onclick="jumptoTime(1235, this.id)">Die we daar even aan mailen.</a>
+				<a href="#00:20:36.60" id="00:20:36.60" class="lt" onclick="jumptoTime(1236, this.id)">Ja, zeker.</a>
+				<a href="#00:20:37.60" id="00:20:37.60" class="lt" onclick="jumptoTime(1237, this.id)">Ja, zeker.</a>
+</div>
+<div class="e" style="background-color: #e1ffc7">
+<span style="color: darkgreen">Interviewer</span><br>
+				<a href="#00:20:42.45" id="00:20:42.45" class="lt" onclick="jumptoTime(1242, this.id)">Ja, zou ik je anders net als verschillende even introduceren?</a>
+				<a href="#00:20:45.30" id="00:20:45.30" class="lt" onclick="jumptoTime(1245, this.id)">Ja.</a>
+</div>
+<div class="e" style="background-color: white">
+<span style="color: darkorange">Dyson</span><br>
+				<a href="#00:20:49.46" id="00:20:49.46" class="lt" onclick="jumptoTime(1249, this.id)">en dan zal ik deze uitzetten</a>
+</div>
+	</body>
+</html>
